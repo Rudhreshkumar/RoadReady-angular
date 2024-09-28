@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../service/user.service';
 import { NgIf } from '@angular/common';
-import { Router } from 'express';
+
+import { User } from '../../../model/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +19,8 @@ export class LoginComponent {
   loginForm: FormGroup;
   token:string=''; 
   loginErrMsg:string='';
-  constructor(private userService: UserService){
+  user:User;
+  constructor(private userService: UserService,private router:Router){
     this.loginForm = new FormGroup({
       username: new FormControl('',[Validators.required,Validators.email]), 
       password: new FormControl('', Validators.required)
@@ -29,8 +32,26 @@ export class LoginComponent {
     .subscribe({
             next: (data)=>{
             this.token = data.token; 
-              console.log(this.token)
+            this.userService.getUserDetails(this.token)
+            .subscribe({
+              next:(data)=>{
+                this.user = data;
+                // save username in local storage 
+                localStorage.setItem('token',this.token );
+                localStorage.setItem('username',this.user.username );
+                localStorage.setItem('role',this.user.role );
+                switch(this.user.role){
+                  case 'ROLE_SELLER':
+                    this.router.navigateByUrl('/seller/dashboard')
+                    break;
+                }
+              
             },
+            error:(err)=>{
+              console.log(err)
+            }
+          })
+        },
             error:(err)=>{
               console.log('in error....')
               this.loginErrMsg = 'Invalid Credentials'; 
