@@ -1,51 +1,96 @@
-<nav class="navbar navbar-light" style="background-color: #A8FF35;">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">RoadReady</span>
-    </div>
+<nav class="navbar navbar-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">RoadReady</span>
+  </div>
 </nav>
 
-<div class="container mt-4" >
-    <div class="row">
-        <div class="col-sm-3">
-        </div>
-        <div class="col-md-6">
-            <div class="card" >
-                <div class="card-header">
-                    Login
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">Login</div>
+        <div class="card-body">
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="loginErrMsg != ''"
+          >
+            {{ loginErrMsg }}
+          </div>
+          <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="mb-3">
+              <label class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                aria-describedby="emailHelp"
+                formControlName="username"
+              />
+              <div
+                *ngIf="
+                  loginForm.get('username').invalid &&
+                  loginForm.get('username').touched
+                "
+              >
+                <div id="emailHelp" class="form-text" style="color: red">
+                  We'll never share your email with anyone else.
                 </div>
-                <div class="card-body">
-                    <div class="alert alert-danger" role="alert" *ngIf="loginErrMsg != ''">
-                        {{loginErrMsg}}
-                      </div>
-                    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-                        <div class="mb-3">
-                            <label class="form-label">Email address</label>
-                            <input type="email" class="form-control" aria-describedby="emailHelp" formControlName="username" >
-                            <div *ngIf="loginForm.get('username').invalid && loginForm.get('username').touched"> 
-                                <div id="emailHelp" class="form-text" style="color: red;" >We'll never share your email with anyone else.</div>
-                                <small *ngIf="loginForm.get('username').errors['required']" style="color: red;">username is required</small>
-                                <small *ngIf="loginForm.get('username').errors['email']" style="color: red;">username/email is invalid</small>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Password</label>
-                            <input type="password" class="form-control" formControlName="password" >
-                            <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched"> 
-                                 <small *ngIf="loginForm.get('password').errors['required']" style="color: red;">password is required</small>
-                             </div>
-                        </div>
-                         
-                        <input type="submit" class="btn btn-primary" [disabled]="loginForm.invalid" value="login"> 
-                    </form>
-                </div>
-                <div class="card-footer">
-                    <span>Forgot Password? Reset here </span>
-                    <br />
-                    <span>Sign Up here</span>
-                </div>
+                <small
+                  *ngIf="loginForm.get('username').errors['required']"
+                  style="color: red"
+                  >username is required</small
+                >
+                <small
+                  *ngIf="loginForm.get('username').errors['email']"
+                  style="color: red"
+                  >username/email is invalid</small
+                >
+              </div>
             </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <div class="input-icon">
+                <input
+                  type="password"
+                  class="form-control"
+                  formControlName="password"
+                /><i class="fa-solid fa-eye-slash"></i>
+              </div>
+              <div
+                *ngIf="
+                  loginForm.get('password').invalid &&
+                  loginForm.get('password').touched
+                "
+              >
+                <small
+                  *ngIf="loginForm.get('password').errors['required']"
+                  style="color: red"
+                  >password is required</small
+                >
+              </div>
+            </div>
+
+            <input
+              type="submit"
+              class="btn-submit"
+              [disabled]="loginForm.invalid"
+              value="login"
+            />
+          </form>
         </div>
-        <div class="col-sm-3">
+        <div
+          class="card-footer"
+          style="display: flex; justify-content: space-between"
+        >
+          <span>Forgot Password? Reset here </span>
+
+          <div>
+            <a href="#" class="link">SignUp</a>
+          </div>
         </div>
+      </div>
     </div>
+    <div class="col-sm-3"></div>
+  </div>
 </div>
