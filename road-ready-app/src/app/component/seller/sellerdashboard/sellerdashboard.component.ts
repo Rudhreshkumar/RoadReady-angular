@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './sellerdashboard.component.css'
 })
 export class SellerdashboardComponent {
-
+  username: any = localStorage.getItem('username'); 
 }
