@@ -22,6 +22,4 @@ getUserDetails(token: string) : Observable<User>{
   })
 }
 
-
-
 }
