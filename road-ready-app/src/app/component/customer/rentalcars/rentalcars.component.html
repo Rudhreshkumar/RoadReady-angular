@@ -1,0 +1,33 @@
+<div class="container">
+  
+  <div class="row">
+    <div
+      class="col-sm-4 mt-4 custom-user-column"
+      *ngFor="let rentalcar of rentalCars"
+    >
+      <div class="card bg-dark" style="width: 18rem">
+        <img src="200.jpg" class="card-img-top" alt="..." style="height: 50%; width: 50%; margin-left: 25%; padding-top: 15px;"  />
+        <div class="card-body">
+          <h5 class="card-title" style="color:rgb(255, 255, 255)">{{ rentalcar.variant.manufacturer.name }}  {{ rentalcar.variant.model }}</h5>
+          <h4 class="card-text"style="color:greenyellow">
+            {{ rentalcar.availabilityStatus }} 😊
+          </h4>
+          
+          <p class="card-text"style="color:greenyellow">
+            {{ rentalcar.color }}
+          </p>
+          <p class="card-text " style="color: aliceblue;">
+           begins  from 
+           
+           <span  style="color:greenyellow">
+
+               {{ rentalcar.pricePerDay }} 
+           </span>
+           per day 
+          </p>
+          <a href="#" class="btn btn-dark" style="border-color: antiquewhite; color:greenyellow">RENT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

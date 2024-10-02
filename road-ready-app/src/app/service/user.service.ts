@@ -22,4 +22,6 @@ getUserDetails(token: string) : Observable<User>{
   })
 }
 
-}
+getRentalCars() : Observable<any>{
+  return this.http.get<any>('http://localhost:8083/executive/rentalcars/all')
+}}
