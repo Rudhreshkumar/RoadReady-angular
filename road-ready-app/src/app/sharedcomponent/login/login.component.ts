@@ -44,6 +44,9 @@ export class LoginComponent {
                   case 'ROLE_SELLER':
                     this.router.navigateByUrl('/seller/dashboard')
                     break;
+                  case 'ROLE_CUSTOMER':
+                    this.router.navigateByUrl('/customer/dashboard')
+                    break;
                 }
               
             },
