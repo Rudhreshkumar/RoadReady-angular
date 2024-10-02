@@ -1,0 +1,78 @@
+/* Navbar styling */
+.navbar {
+    background-color: hwb(212 8% 48%); /* Dark blue color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.navbar-brand {
+    color: greenyellow; /* Set Road Ready to greenyellow */
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Navbar links */
+.nav-link {
+    color: white !important; /* Default link color */
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: greenyellow !important; /* Change link color to greenyellow on hover */
+    text-decoration: underline;
+}
+
+.nav-item.active .nav-link,
+.nav-item .active {
+    font-weight: 700;
+    color: #a8ff35 !important; /* Active link color */
+}
+
+/* Dropdown styling */
+.dropdown-menu {
+    background-color: #fff; /* White background for dropdown */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    color: #333; /* Default dropdown item color */
+    font-size: 1rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #57d900; /* Green background on hover */
+    color: white; /* White text on hover */
+}
+
+.dropdown-divider {
+    border-color: #ddd; /* Divider color */
+}
+
+/* Login Button */
+.btn-outline-primary {
+    color: white; /* Default button text color */
+    border-color: white; /* Button border color */
+    margin-left: 10px;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: white; /* White background on hover */
+    color: #57d900; /* Green text on hover */
+    border-color: white; /* Button border remains white */
+}

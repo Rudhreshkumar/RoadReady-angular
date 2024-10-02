@@ -10,5 +10,4 @@ import { CustomersidebarComponent } from '../customersidebar/customersidebar.com
   styleUrl: './customerdashboard.component.css'
 })
 export class CustomerdashboardComponent {
-  username: any = localStorage.getItem('username'); 
 }
