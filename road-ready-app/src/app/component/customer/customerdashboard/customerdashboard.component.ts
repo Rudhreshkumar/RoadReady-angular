@@ -12,5 +12,4 @@ import { RentalcarsComponent } from "../rentalcars/rentalcars.component";
   styleUrl: './customerdashboard.component.css'
 })
 export class CustomerdashboardComponent {
-  username: any = localStorage.getItem('username'); 
 }
