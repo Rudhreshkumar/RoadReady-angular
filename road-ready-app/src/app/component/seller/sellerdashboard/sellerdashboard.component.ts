@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { SellersidebarComponent } from "../sellersidebar/sellersidebar.component";
 
 @Component({
   selector: 'app-sellerdashboard',
   standalone: true,
-  imports: [],
+  imports: [SellerdashboardComponent, SellersidebarComponent],
   templateUrl: './sellerdashboard.component.html',
   styleUrl: './sellerdashboard.component.css'
 })
