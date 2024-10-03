@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+   height: 500px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+ 
+/* Ensure text in the sidebar does not wrap */
+app-sellersidebar {
+    white-space: nowrap;  /* Prevent text from wrapping to a new line */
+    overflow: hidden;     /* Hide any overflow */
+    text-overflow: ellipsis; /* Show ellipsis if text is too long */
+}
+
+/* If you want to add some padding or margin */
+.app-sellersidebar-content {
+    padding: 10px;  /* Optional: Add padding for aesthetics */
+    color: white;    /* Optional: Change text color for better visibility */
+}

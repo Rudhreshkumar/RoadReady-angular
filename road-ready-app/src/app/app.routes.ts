@@ -9,6 +9,7 @@ import { ProfileSettingsComponent } from './component/customer/profile-settings/
 import { LandingPageComponent } from './component/landing-page/landing-page.component';
 import { HomeComponent } from './component/landing-page/home/home.component';
 import { AboutComponent } from './component/landing-page/about/about.component';
+import { MembershipComponent } from './component/seller/membership/membership.component';
 
 export const routes: Routes = [
     {
@@ -25,6 +26,9 @@ export const routes: Routes = [
     },
     {
         "path":"seller/dashboard",component:SellerdashboardComponent
+    },
+    {
+        "path":"addmembership",component:MembershipComponent
     },
     {
         "path":"customer/dashboard",component:CustomerdashboardComponent

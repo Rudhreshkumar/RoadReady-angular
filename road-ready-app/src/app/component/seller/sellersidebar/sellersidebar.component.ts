@@ -9,5 +9,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './sellersidebar.component.css'
 })
 export class SellersidebarComponent {
+  username: any = localStorage.getItem('username');
 
 }
