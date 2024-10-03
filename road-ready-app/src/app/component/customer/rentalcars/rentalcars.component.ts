@@ -11,16 +11,33 @@ import { UserService } from '../../../service/user.service';
 })
 export class RentalcarsComponent {
   rentalCars: any[] = [];
+  storedCars: any[] = [];
+  navi: any;
 
   constructor(private userService: UserService) {
     userService.getRentalCars().subscribe({
       next: (data) => {
         this.rentalCars = data;
+        this.storedCars = data;
         console.log(this.rentalCars);
       },
       error: (err) => {
         console.log(err);
       },
     });
+  }
+
+  filterCarsByColor(color) {
+    this.rentalCars = this.rentalCars.filter((rc) => rc.color === color);
+  }
+
+  getAllCars() {
+    this.rentalCars = this.storedCars;
+  }
+
+  filterCarsByManufacturer(manufacturer) {
+    this.rentalCars = this.rentalCars.filter(
+      (rc) => rc.variant.manufacturer.name === manufacturer
+    );
   }
 }

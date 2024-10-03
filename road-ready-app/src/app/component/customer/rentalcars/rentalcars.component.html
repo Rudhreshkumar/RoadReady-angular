@@ -1,31 +1,107 @@
 <div class="container">
+  <div class="d-flex gap-3 mt-4">
+  <div class="btn-group">
+    <button
+      type="button"
+      class="btn dropdown-toggle"
+      style=" color: greenyellow"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      color
+    </button>
+    <ul class="dropdown-menu">
+      <li>
+        <button class="dropdown-item" (click)="filterCarsByColor('navi')">
+          Navi
+        </button>
+      </li>
+      <li>
+        <button
+          class="dropdown-item"
+          (click)="filterCarsByColor('mitary green')"
+        >
+          mitary green
+        </button>
+      </li>
+      <li>
+        <button class="dropdown-item" (click)="getAllCars()">
+          All Rental Cars
+        </button>
+      </li>
+    </ul>
+  </div> 
   
+  <div class="btn-group">
+    <button
+      type="button"
+      class="btn  dropdown-toggle"
+      style=" color: greenyellow"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      manufacturer
+    </button>
+    <ul class="dropdown-menu">
+      <li>
+        <button class="dropdown-item" (click)="filterCarsByManufacturer('TATA')">
+          TATA
+        </button>
+      </li>
+      <li>
+        <button
+          class="dropdown-item"
+          (click)="filterCarsByManufacturer('Tesla')"
+        >
+          Tesla
+        </button>
+      </li>
+      <li>
+        <button class="dropdown-item" (click)="getAllCars()">
+          All Rental Cars
+        </button>
+      </li>
+    </ul>
+  </div>
+  </div>
   <div class="row">
     <div
       class="col-sm-4 mt-4 custom-user-column"
       *ngFor="let rentalcar of rentalCars"
     >
       <div class="card bg-dark" style="width: 18rem">
-        <img src="200.jpg" class="card-img-top" alt="..." style="height: 50%; width: 50%; margin-left: 25%; padding-top: 15px;"  />
+        <img
+          src="200.jpg"
+          class="card-img-top"
+          alt="..."
+          style="height: 50%; width: 50%; margin-left: 25%; padding-top: 15px"
+        />
         <div class="card-body">
-          <h5 class="card-title" style="color:rgb(255, 255, 255)">{{ rentalcar.variant.manufacturer.name }}  {{ rentalcar.variant.model }}</h5>
-          <h4 class="card-text"style="color:greenyellow">
+          <h5 class="card-title" style="color: rgb(255, 255, 255)">
+            {{ rentalcar.variant.manufacturer.name }}
+            {{ rentalcar.variant.model }}
+          </h5>
+          <h4 class="card-text" style="color: greenyellow">
             {{ rentalcar.availabilityStatus }} 😊
           </h4>
-          
-          <p class="card-text"style="color:greenyellow">
+
+          <p class="card-text" style="color: greenyellow">
             {{ rentalcar.color }}
           </p>
-          <p class="card-text " style="color: aliceblue;">
-           begins  from 
-           
-           <span  style="color:greenyellow">
+          <p class="card-text" style="color: aliceblue">
+            begins from
 
-               {{ rentalcar.pricePerDay }} 
-           </span>
-           per day 
+            <span style="color: greenyellow">
+              {{ rentalcar.pricePerDay }}
+            </span>
+            per day
           </p>
-          <a href="#" class="btn btn-dark" style="border-color: antiquewhite; color:greenyellow">RENT</a>
+          <a
+            href="#"
+            class="btn btn-dark"
+            style="border-color: antiquewhite; color: greenyellow"
+            >RENT</a
+          >
         </div>
       </div>
     </div>
