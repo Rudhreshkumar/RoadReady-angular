@@ -1,11 +1,13 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { UserService } from '../../../service/user.service';
+import { CustomerNavbarComponent } from '../customer-navbar/customer-navbar.component';
+import { CustomersidebarComponent } from '../customersidebar/customersidebar.component';
 
 @Component({
   selector: 'app-rentalcars',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor,CustomerNavbarComponent,CustomersidebarComponent],
   templateUrl: './rentalcars.component.html',
   styleUrl: './rentalcars.component.css',
 })

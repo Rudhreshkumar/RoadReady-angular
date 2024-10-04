@@ -7,7 +7,7 @@ import { RentalcarsComponent } from "../rentalcars/rentalcars.component";
 @Component({
   selector: 'app-customerdashboard',
   standalone: true,
-  imports: [CustomersidebarComponent, CustomerNavbarComponent, RentalcarsComponent],
+  imports: [CustomersidebarComponent],
   templateUrl: './customerdashboard.component.html',
   styleUrl: './customerdashboard.component.css'
 })

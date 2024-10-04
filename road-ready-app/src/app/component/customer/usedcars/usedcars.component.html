@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row" style="padding: 0; margin: 0;">
+    <div class="col-sm-2" style="padding: 0; margin: 0;">
+      <app-usedcar-sidebar></app-usedcar-sidebar>
+    </div>
+    <div class="col-sm-10" style="padding: 0; margin: 0;">
+      <app-usedcar-navbar></app-usedcar-navbar>
+      <div class="row mt-4">
+        <div
+          class="col-sm-6 col-md-4 d-flex align-items-stretch mt-4 custom-user-column"
+          *ngFor="let usedcar of usedCars"
+        >
+          <div class="card bg-dark" style="width: 100%;">
+            <img
+              src="1726602323209_redcar.jpg"
+              class="card-img-top"
+              alt="..."
+              style="height: 200px; width: 100%; padding-top: 15px; object-fit: cover;"
+            />
+            <div class="card-body">
+              <h4 class="card-title" style="color: rgb(255, 255, 255)">
+                {{ usedcar.model.brand.brandname }} {{ usedcar.model.modelname }}
+              </h4>
+              <h6 class="card-text" style="color: greenyellow">
+                {{ usedcar.mileage }} km&nbsp;&nbsp;{{ usedcar.fuelType }}&nbsp;&nbsp;{{ usedcar.transmissionType }}
+              </h6>
+              <h5 class="card-text" style="color: rgb(255, 47, 127)">
+                ₹ {{ usedcar.price }}
+              </h5>
+              <a href="#" class="btn btn-dark" style="border-color: antiquewhite; color: greenyellow">View More Details</a>
+              <p class="card-text" style="color: aliceblue">
+                {{usedcar.location}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
