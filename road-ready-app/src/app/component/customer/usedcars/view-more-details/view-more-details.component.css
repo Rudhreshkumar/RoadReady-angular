@@ -1,0 +1,10 @@
+.my-custom-divider {
+    border: 1px solid #ccc; /* Change color as needed */
+    margin: 20px 0; /* Add spacing above and below the divider */
+}
+.card-details {
+    padding: 15px; /* Add some padding */
+    margin-top: 15px; /* Add margin on top to separate from the carousel */
+    border: 1px solid #ccc; /* Optional: add a border */
+    border-radius: 5px; /* Optional: add rounded corners */
+}

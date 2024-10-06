@@ -11,6 +11,11 @@ import { HomeComponent } from './component/landing-page/home/home.component';
 import { AboutComponent } from './component/landing-page/about/about.component';
 import { RentalcarsComponent } from './component/customer/rentalcars/rentalcars.component';
 import { UsedcarsComponent } from './component/customer/usedcars/usedcars.component';
+import { ViewMoreDetailsComponent } from './component/customer/usedcars/view-more-details/view-more-details.component';
+import { PurchaseComponent } from './component/customer/usedcars/purchase/purchase.component';
+import { SignUpComponent } from './component/customer/usedcars/sign-up/sign-up.component';
+
+
 
 export const routes: Routes = [
     {
@@ -48,7 +53,14 @@ export const routes: Routes = [
     },
     {
         "path":"customer/usedcars",component:UsedcarsComponent
+    },
+    {
+        "path":"usedcars/view-more-details",component:ViewMoreDetailsComponent
+    },
+    {
+        "path":"sign-up",component:SignUpComponent
+    },
+    {
+        "path":"usedcars/purchase",component:PurchaseComponent
     }
-
-
 ];

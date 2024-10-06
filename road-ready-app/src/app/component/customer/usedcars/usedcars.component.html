@@ -7,29 +7,29 @@
       <app-usedcar-navbar></app-usedcar-navbar>
       <div class="row mt-4">
         <div
-          class="col-sm-6 col-md-4 d-flex align-items-stretch mt-4 custom-user-column"
+          class="col-sm-6 col-md-3 d-flex align-items-stretch mt-3 custom-user-column"
           *ngFor="let usedcar of usedCars"
         >
-          <div class="card bg-dark" style="width: 100%;">
+          <div class="card bg-dark" style="width: 100%; padding: 10px;">
             <img
-              src="1726602323209_redcar.jpg"
-              class="card-img-top"
-              alt="..."
-              style="height: 200px; width: 100%; padding-top: 15px; object-fit: cover;"
-            />
+            [src]="usedcar.imagePath ? usedcar.imagePath : 'assets/placeholder.jpg'"
+            class="card-img-top"
+            alt="Car image"
+            style="height: 180px; width: 100%; padding-top: 10px; object-fit: cover;"
+          />
             <div class="card-body">
-              <h4 class="card-title" style="color: rgb(255, 255, 255)">
+              <h5 class="card-title" style="color: rgb(255, 255, 255); font-size: 1.1rem;">
                 {{ usedcar.model.brand.brandname }} {{ usedcar.model.modelname }}
-              </h4>
-              <h6 class="card-text" style="color: greenyellow">
+              </h5>
+              <h6 class="card-text" style="color: greenyellow; font-size: 0.9rem;">
                 {{ usedcar.mileage }} km&nbsp;&nbsp;{{ usedcar.fuelType }}&nbsp;&nbsp;{{ usedcar.transmissionType }}
               </h6>
-              <h5 class="card-text" style="color: rgb(255, 47, 127)">
+              <h5 class="card-text" style="color: rgb(255, 47, 127); font-size: 1rem;">
                 ₹ {{ usedcar.price }}
               </h5>
-              <a href="#" class="btn btn-dark" style="border-color: antiquewhite; color: greenyellow">View More Details</a>
-              <p class="card-text" style="color: aliceblue">
-                {{usedcar.location}}
+              <a routerLink="/usedcars/view-more-details" class="btn btn-dark" style="border-color: antiquewhite; color: greenyellow; font-size: 0.85rem;">View More Details</a>
+              <p class="card-text" style="color: aliceblue; font-size: 0.85rem;">
+                {{ usedcar.location }}
               </p>
             </div>
           </div>

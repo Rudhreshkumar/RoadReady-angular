@@ -3,11 +3,12 @@ import { UsedcarNavbarComponent } from "./usedcar-navbar/usedcar-navbar.componen
 import { UsedcarSidebarComponent } from './usedcar-sidebar/usedcar-sidebar.component';
 import { CustomerService } from '../../../service/customer.service';
 import { NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-usedcars',
   standalone: true,
-  imports: [UsedcarNavbarComponent,UsedcarSidebarComponent,NgFor],
+  imports: [UsedcarNavbarComponent,UsedcarSidebarComponent,NgFor,RouterLink],
   templateUrl: './usedcars.component.html',
   styleUrl: './usedcars.component.css'
 })

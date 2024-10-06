@@ -42,13 +42,12 @@ export class LoginComponent {
                 localStorage.setItem('role',this.user.role );
                 switch(this.user.role){
                   case 'ROLE_SELLER':
-                    this.router.navigateByUrl('/seller/dashboard')
+                    this.router.navigateByUrl('/addmembership')
                     break;
                   case 'ROLE_CUSTOMER':
                     this.router.navigateByUrl('/customer/dashboard')
                     break;
-                }
-              
+                }              
             },
             error:(err)=>{
               console.log(err)

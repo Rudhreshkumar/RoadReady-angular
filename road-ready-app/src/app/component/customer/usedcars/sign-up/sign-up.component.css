@@ -1,0 +1,39 @@
+/* Full height for the body */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Flexbox for centering */
+body {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #f8f9fa; /* Light background for contrast */
+}
+
+/* Container for the signup form */
+.signup-container {
+    background: white; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding for inner content */
+    width: 400px; /* Fixed width for the form */
+}
+
+/* Logo styling */
+.logo {
+    display: block; /* Block for centering */
+    margin: 0 auto 20px; /* Center horizontally and space below */
+}
+
+/* Add styles for input fields */
+.form-control {
+    border-radius: 5px; /* Rounded corners for input fields */
+}
+
+/* Button styles */
+.btn {
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding for button */
+}
