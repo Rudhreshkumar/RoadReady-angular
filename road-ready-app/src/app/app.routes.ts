@@ -14,6 +14,8 @@ import { UsedcarsComponent } from './component/customer/usedcars/usedcars.compon
 import { ViewMoreDetailsComponent } from './component/customer/usedcars/view-more-details/view-more-details.component';
 import { PurchaseComponent } from './component/customer/usedcars/purchase/purchase.component';
 import { SignUpComponent } from './component/customer/usedcars/sign-up/sign-up.component';
+import { SingleRentalCarComponent } from './component/customer/rentalcars/single-rental-car/single-rental-car.component';
+import { BookingComponent } from './component/customer/rentalcars/booking/booking.component';
 
 
 
@@ -50,6 +52,12 @@ export const routes: Routes = [
     },
     {
         "path":"customer/rentalcars",component:RentalcarsComponent
+    },
+    {
+        "path":"customer/rentalcars/single-rental-car",component:SingleRentalCarComponent
+    },
+    {
+        "path":"customer/rentalcars/booking",component:BookingComponent
     },
     {
         "path":"customer/usedcars",component:UsedcarsComponent
