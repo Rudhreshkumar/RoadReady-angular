@@ -1,25 +1,109 @@
 <div class="container-fluid">
   <div class="row" style="padding: 0; margin: 0;">
+    <!-- Sidebar -->
     <div class="col-sm-2" style="padding: 0; margin: 0;">
       <app-usedcar-sidebar></app-usedcar-sidebar>
     </div>
+
+    <!-- Main Content Area -->
     <div class="col-sm-10" style="padding: 0; margin: 0;">
       <app-usedcar-navbar></app-usedcar-navbar>
+
+      <!-- Dropdown Menu Below Navbar -->
+      <div class="d-flex justify-content-center mt-3">
+        <div class="dropdown">
+          <button
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Select Car Attributes
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <!-- Brand Dropdown -->
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Brand</a>
+              <ul class="dropdown-menu">
+                <li><button class="dropdown-item" (click)="selectedBrand = 'Toyota'; applyFilter()">Toyota</button></li>
+                <li><button class="dropdown-item" (click)="selectedBrand = 'Maruti'; applyFilter()">Maruti</button></li>
+                <li><button class="dropdown-item" (click)="selectedBrand = 'Ford'; applyFilter()">Ford</button></li>
+              </ul>
+            </li>
+
+            <!-- Model Dropdown -->
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Model</a>
+              <ul class="dropdown-menu">
+                <li><button class="dropdown-item" (click)="selectedModel = 'Swift'; applyFilter()">Swift</button></li>
+                <li><button class="dropdown-item" (click)="selectedModel = 'Model2'; applyFilter()">Model2</button></li>
+                <li><button class="dropdown-item" (click)="selectedModel = 'Model3'; applyFilter()">Model3</button></li>
+              </ul>
+            </li>
+
+            <!-- Color Dropdown -->
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Color</a>
+              <ul class="dropdown-menu">
+                <li><button class="dropdown-item" (click)="selectedColor = 'Red'; applyFilter()">Red</button></li>
+                <li><button class="dropdown-item" (click)="selectedColor = 'Blue'; applyFilter()">Blue</button></li>
+                <li><button class="dropdown-item" (click)="selectedColor = 'Black'; applyFilter()">Black</button></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Location</a>
+              <ul class="dropdown-menu">
+                <li><button class="dropdown-item" (click)="selectedLocation = 'Mumbai'; applyFilter()">Mumbai</button></li>
+                <li><button class="dropdown-item" (click)="selectedLocation = 'Chennai'; applyFilter()">Chennai</button></li>
+                <li><button class="dropdown-item" (click)="selectedLocation = 'Hyderabad'; applyFilter()">Hyderabad</button></li>
+              </ul>
+            </li>
+
+            <!-- Fuel Type Dropdown -->
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Fuel Type</a>
+              <ul class="dropdown-menu">
+                <li><button class="dropdown-item" (click)="selectedFuelType='Petrol'; applyFilter()">Petrol</button></li>
+                <li><button class="dropdown-item" (click)="selectedFuelType='Diesel'; applyFilter()">Diesel</button></li>
+                <li><button class="dropdown-item" (click)="selectedFuelType='Electric'; applyFilter()">Electric</button></li>
+              </ul>
+            </li>
+
+            <!-- Transmission Type Dropdown -->
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Transmission Type</a>
+              <ul class="dropdown-menu">
+                <li><button class="dropdown-item" (click)="selectedTransmissionType='Automatic'; applyFilter()">Automatic</button></li>
+                <li><button class="dropdown-item" (click)="selectedTransmissionType='Manual'; applyFilter()">Manual</button></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- All Cars Button -->
+      <button class="btn" (click)="getAllCars()" style="background:#3630a3;color:white; margin-top: 10px;">
+        Show All Cars
+      </button>
+
+      <!-- Car Details -->
       <div class="row mt-4">
         <div
           class="col-sm-6 col-md-3 d-flex align-items-stretch mt-3 custom-user-column"
-          *ngFor="let usedcar of usedCars"
+          *ngFor="let usedcar of filteredUsedCars"
         >
           <div class="card bg-dark" style="width: 100%; padding: 10px;">
             <img
-            [src]="usedcar.imagePath ? usedcar.imagePath : 'assets/placeholder.jpg'"
-            class="card-img-top"
-            alt="Car image"
-            style="height: 180px; width: 100%; padding-top: 10px; object-fit: cover;"
-          />
+              [src]="usedcar.imagePath ? usedcar.imagePath : 'assets/placeholder.jpg'"
+              class="card-img-top"
+              alt="Car image"
+              style="height: 180px; width: 100%; padding-top: 10px; object-fit: cover;"
+            />
             <div class="card-body">
               <h5 class="card-title" style="color: rgb(255, 255, 255); font-size: 1.1rem;">
-                {{ usedcar.model.brand.brandname }} {{ usedcar.model.modelname }}
+                {{ usedcar.brand }} {{ usedcar.model }}
               </h5>
               <h6 class="card-text" style="color: greenyellow; font-size: 0.9rem;">
                 {{ usedcar.mileage }} km&nbsp;&nbsp;{{ usedcar.fuelType }}&nbsp;&nbsp;{{ usedcar.transmissionType }}
@@ -27,7 +111,9 @@
               <h5 class="card-text" style="color: rgb(255, 47, 127); font-size: 1rem;">
                 ₹ {{ usedcar.price }}
               </h5>
-              <a routerLink="/usedcars/view-more-details" class="btn btn-dark" style="border-color: antiquewhite; color: greenyellow; font-size: 0.85rem;">View More Details</a>
+              <a routerLink="/usedcars/view-more-details" class="btn btn-dark" style="border-color: antiquewhite; color: greenyellow; font-size: 0.85rem;">
+                View More Details
+              </a>
               <p class="card-text" style="color: aliceblue; font-size: 0.85rem;">
                 {{ usedcar.location }}
               </p>

@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>Sign Up - Road Ready</title>
-</head>
-<body>
-    <div class="car-image-container"></div>
-    <div class="signup-container">
-        <img src="https://via.placeholder.com/150" alt="Road Ready Logo" class="logo">
-        <h2>Sign Up</h2>
+<div class="full-page-background" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex;">
+
+    <!-- Left Side Image -->
+    <img src="simple.jpg" alt="Car Image" style="width: 60%; height: 100%; object-fit: cover;">
+
+    <!-- Right Side Sign-Up Form -->
+    <div class="signup-container" style="flex: 1; padding: 20px; border-left: 1px solid #4c4949; border-radius: 0 5px 5px 0; box-shadow: 0 2px 10px rgba(206, 41, 41, 0.5); background-color: rgba(37, 38, 35, 0.9);">
+        <h2 style="text-align: center; margin-bottom: 20px; color:greenyellow;" >Sign Up</h2>
         <form>
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
@@ -26,15 +20,14 @@
                 <input type="text" class="form-control" id="address" placeholder="Enter your address" required>
             </div>
             <div class="mb-3">
-                <label for="panCard" class="form-label">Upload PAN Card</label>
+                <label for="panCard"class="form-label">Upload PAN Card</label>
                 <input type="file" class="form-control" id="panCard" accept=".pdf,.jpg,.jpeg,.png" required>
             </div>
             <div class="mb-3">
                 <label for="driverLicense" class="form-label">Upload Driver License</label>
                 <input type="file" class="form-control" id="driverLicense" accept=".pdf,.jpg,.jpeg,.png" required>
             </div>
-            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <button type="submit" class="btn btn-primary" style="width: 100%; background-color: greenyellow; border: none; padding: 10px;">Sign Up</button>
         </form>
     </div>
-</body>
-</html>
+</div>

@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { UsedCar } from "../../model/usedCar.model";
+
 
 
 @Injectable({
@@ -25,6 +27,11 @@ import { Observable } from "rxjs";
     }, {
         headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     });
+    }
+
+    getFilteredUsedCars(filter: Partial<UsedCar>):Observable<UsedCar[]>{
+      return this.http.post<UsedCar[]>('http://localhost:8083/Usedcars/filter',filter);
+  
     }
   }
   
