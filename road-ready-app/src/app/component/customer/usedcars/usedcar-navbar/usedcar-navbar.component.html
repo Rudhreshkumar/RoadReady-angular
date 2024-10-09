@@ -5,21 +5,9 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarContent">
-    <ul class="navbar-nav me-auto"> 
-      <li class="nav-item dropdown me-3">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.2rem;">
-          Filter Used Cars
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="font-size: 1.2rem;">
-          <a class="dropdown-item" href="#">Brand</a>
-          <a class="dropdown-item" href="#">Model</a>
-          <a class="dropdown-item" href="#">Transmission</a>
-          <a class="dropdown-item" href="#">Fuel Type</a>
-          <a class="dropdown-item" href="#">Location</a>
-          <a class="dropdown-item" href="#">Budget</a>
-          <a class="dropdown-item" href="#">Color</a>
-        </div>
-      </li>
+    <ul class="navbar-nav me-auto">
+  
+      <!-- Sort By Dropdown -->
       <li class="nav-item dropdown me-3">
         <a class="nav-link dropdown-toggle" href="#" id="navbarSortDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.2rem;">
           Sort By
@@ -30,6 +18,7 @@
         </div>
       </li>
 
+      <!-- Search Form -->
       <li class="nav-item" style="width: 600px;">
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search cars" aria-label="Search" style="width: 100%;">
@@ -37,9 +26,11 @@
         </form>
       </li>
     </ul>
+
+    <!-- Login/Register Buttons -->
     <div class="d-flex">
-      <a routerLink="/login" class="btn btn-outline-dark my-2 my-sm-0" style="margin-right: 10px;">Login</a>
-      <a routerLink="#" class="btn btn-outline-dark my-2 my-sm-0">Register</a>
+      <a href="/login" class="btn btn-outline-dark my-2 my-sm-0" style="margin-right: 10px;">Login</a>
+      <a href="#" class="btn btn-outline-dark my-2 my-sm-0">Register</a>
     </div>
   </div>
 </nav>

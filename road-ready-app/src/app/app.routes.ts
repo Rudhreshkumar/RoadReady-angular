@@ -66,7 +66,7 @@ export const routes: Routes = [
         "path":"usedcars/view-more-details",component:ViewMoreDetailsComponent
     },
     {
-        "path":"sign-up",component:SignUpComponent
+        "path":"signup",component:SignUpComponent
     },
     {
         "path":"usedcars/purchase",component:PurchaseComponent

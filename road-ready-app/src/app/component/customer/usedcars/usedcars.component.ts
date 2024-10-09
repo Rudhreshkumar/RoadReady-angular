@@ -4,6 +4,7 @@ import { UsedcarSidebarComponent } from './usedcar-sidebar/usedcar-sidebar.compo
 import { CustomerService } from '../../../service/customer.service';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { UsedCar } from '../../../../model/usedCar.model';
 
 @Component({
   selector: 'app-usedcars',
@@ -14,8 +15,19 @@ import { RouterLink } from '@angular/router';
 })
 export class UsedcarsComponent {
 
-  usedCars: any[] = [];
+  usedCars: any[];
   storedCars: any[] = [];
+
+  selectedBrand?: string;
+  selectedColor?: string;
+  selectedModel?: string;
+  selectedFuelType?: string;
+  selectedTransmissionType?: string;
+  selectedLocation?: string;
+  selectedMileage?: number;
+  selectedYear?: number;
+  filteredUsedCars: UsedCar[] = [];
+  
 
   constructor(private customerService:CustomerService){
     customerService.getUsedCars().subscribe({
@@ -30,4 +42,34 @@ export class UsedcarsComponent {
     });
   }
 
+  getAllCars() {
+    this.filteredUsedCars = this.storedCars;
+  }
+
+
+  applyFilter() {
+    const filter = new UsedCar(
+      0, // Placeholder for id; not needed for filtering
+      this.selectedBrand,
+      this.selectedColor,
+      this.selectedModel,
+      this.selectedFuelType,
+      this.selectedTransmissionType,
+      this.selectedLocation,
+      this.selectedMileage,
+      this.selectedYear
+    );
+
+    // Call the service to get filtered used cars
+    this.customerService.getFilteredUsedCars(filter).subscribe({
+      next:(usedCars) => {
+        this.filteredUsedCars = usedCars; // Update your filtered used cars
+      },
+      error:(err) => {
+        console.error('Error fetching used cars', err);
+      }
+  });
+  }
+  
 }
+
