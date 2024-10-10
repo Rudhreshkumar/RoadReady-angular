@@ -9,7 +9,13 @@ import { ProfileSettingsComponent } from './component/customer/profile-settings/
 import { LandingPageComponent } from './component/landing-page/landing-page.component';
 import { HomeComponent } from './component/landing-page/home/home.component';
 import { AboutComponent } from './component/landing-page/about/about.component';
-import { MembershipComponent } from './component/seller/membership/membership.component';
+import { RentalcarsComponent } from './component/customer/rentalcars/rentalcars.component';
+import { UsedcarsComponent } from './component/customer/usedcars/usedcars.component';
+import { ViewMoreDetailsComponent } from './component/customer/usedcars/view-more-details/view-more-details.component';
+import { PurchaseComponent } from './component/customer/usedcars/purchase/purchase.component';
+import { SignUpComponent } from './component/customer/usedcars/sign-up/sign-up.component';
+import { SingleRentalCarComponent } from './component/customer/rentalcars/single-rental-car/single-rental-car.component';
+import { BookingComponent } from './component/customer/rentalcars/booking/booking.component';
 
 import { UsedcarComponent } from './component/seller/usedcar/usedcar.component';
 import { OnboardComponent } from './component/usedcaradd/onboard/onboard.component';
@@ -18,8 +24,10 @@ import { BookinspectionComponent } from './component/seller/bookinspection/booki
 import { SelectlocationComponent } from './component/seller/selectlocation/selectlocation.component';
 import { CheckingpriceComponent } from './component/seller/checkingprice/checkingprice.component';
 import { UsedcardetailsComponent } from './component/usedcaradd/usedcardetails/usedcardetails.component';
+import { MembershipComponent } from './component/seller/membership/membership.component';
 
 export const routes: Routes = [
+
     {
         "path":"",component:LandingPageComponent
     },
@@ -70,7 +78,64 @@ export const routes: Routes = [
     },
     {
         "path":"customer/profile-settings",component:ProfileSettingsComponent
-    }
-
+    },
+  {
+    path: 'customer/dashboard',
+    component: CustomerdashboardComponent,
+    children: [
+      {
+        path: 'rentalcars',
+        component: RentalcarsComponent,
+        pathMatch:'full'
+      },
+      {
+        path:"single-car/:scid", component:SingleRentalCarComponent
+      }
+    ],
+  },
+  {
+    path: 'customer/wishlisted-cars',
+    component: WishlistedCarsComponent,
+  },
+  {
+    path: 'customer/my-purchase',
+    component: MyPurchaseComponent,
+  },
+  {
+    path: 'customer/rental-history',
+    component: RentalHistoryComponent,
+  },
+  {
+    path: 'customer/profile-settings',
+    component: ProfileSettingsComponent,
+  },
+//   {
+//     path: 'customer/rentalcars',
+//     component: RentalcarsComponent,
+//   },
+  {
+    path: 'customer/rentalcars/single-rental-car',
+    component: SingleRentalCarComponent,
+  },
+  {
+    path: 'customer/rentalcars/booking',
+    component: BookingComponent,
+  },
+  {
+    path: 'customer/usedcars',
+    component: UsedcarsComponent,
+  },
+  {
+    path: 'usedcars/view-more-details',
+    component: ViewMoreDetailsComponent,
+  },
+  {
+    path: 'signup',
+    component: SignUpComponent,
+  },
+  {
+    path: 'usedcars/purchase',
+    component: PurchaseComponent,
+  },
 
 ];

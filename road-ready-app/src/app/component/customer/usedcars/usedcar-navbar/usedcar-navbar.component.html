@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg" style="background-color: greenyellow; padding: 0;">
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarContent">
+    <ul class="navbar-nav me-auto">
+  
+      <!-- Sort By Dropdown -->
+      <li class="nav-item dropdown me-3">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarSortDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.2rem;">
+          Sort By
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarSortDropdown" style="font-size: 1.2rem;">
+          <a class="dropdown-item" href="#">Oldest</a>
+          <a class="dropdown-item" href="#">Newest</a>
+        </div>
+      </li>
+
+      <!-- Search Form -->
+      <li class="nav-item" style="width: 600px;">
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search cars" aria-label="Search" style="width: 100%;">
+          <button class="btn btn-outline-success" type="submit" style="color: black; border-color: black;">Search</button>
+        </form>
+      </li>
+    </ul>
+
+    <!-- Login/Register Buttons -->
+    <div class="d-flex">
+      <a href="/login" class="btn btn-outline-dark my-2 my-sm-0" style="margin-right: 10px;">Login</a>
+      <a href="#" class="btn btn-outline-dark my-2 my-sm-0">Register</a>
+    </div>
+  </div>
+</nav>

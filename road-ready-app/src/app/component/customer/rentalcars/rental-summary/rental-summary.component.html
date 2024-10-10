@@ -1,0 +1,26 @@
+<div class="mt-2">
+  <label>Driver: </label>
+  <input
+    type="checkbox"
+    [defaultChecked]="false"
+    class="form-control"
+    [(ngModel)]="driver"
+  />
+</div>
+<div class="mt-2">
+  <label>Duration: </label>
+  <input type="text" class="form-control" [(ngModel)]="duration" />
+</div>
+<div class="mt-2">
+  <label>safeKeepId: </label>
+  <input type="text" class="form-control" [(ngModel)]="safeKeepId" />
+</div>
+<hr />
+<div class="mt-2">
+  <label>panNumber: </label>
+  <input type="text" class="form-control" [(ngModel)]="panNumber" />
+</div>
+
+<hr />
+<button>Proceed To Pay</button>
+

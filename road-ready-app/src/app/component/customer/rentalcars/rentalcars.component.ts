@@ -1,6 +1,9 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { UserService } from '../../../service/user.service';
+import { CustomerNavbarComponent } from '../customer-navbar/customer-navbar.component';
+import { CustomersidebarComponent } from '../customersidebar/customersidebar.component';
+import {  RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-rentalcars',
@@ -12,14 +15,14 @@ import { UserService } from '../../../service/user.service';
 export class RentalcarsComponent {
   rentalCars: any[] = [];
   storedCars: any[] = [];
-  navi: any;
+  
 
   constructor(private userService: UserService) {
     userService.getRentalCars().subscribe({
       next: (data) => {
         this.rentalCars = data;
         this.storedCars = data;
-        console.log(this.rentalCars);
+       
       },
       error: (err) => {
         console.log(err);

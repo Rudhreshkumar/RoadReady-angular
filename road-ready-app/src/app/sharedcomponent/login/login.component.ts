@@ -47,8 +47,7 @@ export class LoginComponent {
                   case 'ROLE_CUSTOMER':
                     this.router.navigateByUrl('/customer/dashboard')
                     break;
-                }
-              
+                }              
             },
             error:(err)=>{
               console.log(err)

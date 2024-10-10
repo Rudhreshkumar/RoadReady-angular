@@ -1,0 +1,29 @@
+.custom-user-column {
+  display: flex;
+  justify-content: center; /* Center cards horizontally */
+  margin-bottom: 15px; /* Space between rows */
+}
+
+.card {
+  height: 100%; /* Ensure card takes the full height of the column */
+}
+
+.card-img-top {
+  border-top-left-radius: 10px; /* Optional: add rounded corners */
+  border-top-right-radius: 10px; /* Optional: add rounded corners */
+}
+
+/* Style for multi-level dropdown */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
