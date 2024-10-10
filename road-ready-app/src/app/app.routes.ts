@@ -17,58 +17,83 @@ import { SignUpComponent } from './component/customer/usedcars/sign-up/sign-up.c
 import { SingleRentalCarComponent } from './component/customer/rentalcars/single-rental-car/single-rental-car.component';
 import { BookingComponent } from './component/customer/rentalcars/booking/booking.component';
 
-
-
 export const routes: Routes = [
-    {
-        "path":"",component:LandingPageComponent
-    },
-    {
-        "path":"home",component:HomeComponent
-    },
-    {
-        "path":"about",component:AboutComponent
-    },
-    {
-        "path":"login",component: LoginComponent
-    },
-    {
-        "path":"seller/dashboard",component:SellerdashboardComponent
-    },
-    {
-        "path":"customer/dashboard",component:CustomerdashboardComponent
-    },
-    {
-        "path":"customer/wishlisted-cars",component:WishlistedCarsComponent
-    },
-    {
-        "path":"customer/my-purchase",component:MyPurchaseComponent
-    },
-    {
-        "path":"customer/rental-history",component:RentalHistoryComponent
-    },
-    {
-        "path":"customer/profile-settings",component:ProfileSettingsComponent
-    },
-    {
-        "path":"customer/rentalcars",component:RentalcarsComponent
-    },
-    {
-        "path":"customer/rentalcars/single-rental-car",component:SingleRentalCarComponent
-    },
-    {
-        "path":"customer/rentalcars/booking",component:BookingComponent
-    },
-    {
-        "path":"customer/usedcars",component:UsedcarsComponent
-    },
-    {
-        "path":"usedcars/view-more-details",component:ViewMoreDetailsComponent
-    },
-    {
-        "path":"signup",component:SignUpComponent
-    },
-    {
-        "path":"usedcars/purchase",component:PurchaseComponent
-    }
+  {
+    path: '',
+    component: LandingPageComponent,
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'seller/dashboard',
+    component: SellerdashboardComponent,
+  },
+  {
+    path: 'customer/dashboard',
+    component: CustomerdashboardComponent,
+    children: [
+      {
+        path: 'rentalcars',
+        component: RentalcarsComponent,
+        pathMatch:'full'
+      },
+      {
+        path:"single-car/:scid", component:SingleRentalCarComponent
+      }
+    ],
+  },
+  {
+    path: 'customer/wishlisted-cars',
+    component: WishlistedCarsComponent,
+  },
+  {
+    path: 'customer/my-purchase',
+    component: MyPurchaseComponent,
+  },
+  {
+    path: 'customer/rental-history',
+    component: RentalHistoryComponent,
+  },
+  {
+    path: 'customer/profile-settings',
+    component: ProfileSettingsComponent,
+  },
+//   {
+//     path: 'customer/rentalcars',
+//     component: RentalcarsComponent,
+//   },
+  {
+    path: 'customer/rentalcars/single-rental-car',
+    component: SingleRentalCarComponent,
+  },
+  {
+    path: 'customer/rentalcars/booking',
+    component: BookingComponent,
+  },
+  {
+    path: 'customer/usedcars',
+    component: UsedcarsComponent,
+  },
+  {
+    path: 'usedcars/view-more-details',
+    component: ViewMoreDetailsComponent,
+  },
+  {
+    path: 'signup',
+    component: SignUpComponent,
+  },
+  {
+    path: 'usedcars/purchase',
+    component: PurchaseComponent,
+  },
 ];

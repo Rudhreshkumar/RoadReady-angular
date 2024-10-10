@@ -1,119 +1,138 @@
-<div class="container-fluid">
-  <div class="row" style="padding: 0; margin: 0;">
-    <div class="col-sm-2" style="padding: 0; margin: 0;">
-      <app-customersidebar></app-customersidebar>
-    </div>
-    <div class="col-sm-10" style="padding: 0; margin: 0;">
-      <app-customer-navbar></app-customer-navbar>
-      
-      <div class="container">
-        <div class="d-flex gap-3 mt-4">
-          <div class="btn-group">
-            <button
-              type="button"
-              class="btn dropdown-toggle"
-              style="color: greenyellow;"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Color
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <button class="dropdown-item" (click)="filterCarsByColor('navi')">Navi</button>
-              </li>
-              <li>
-                <button class="dropdown-item" (click)="filterCarsByColor('military green')">Military Green</button>
-              </li>
-              <li>
-                <button class="dropdown-item" (click)="getAllCars()">All Rental Cars</button>
-              </li>
-            </ul>
-          </div>
-
-          
-
-          <div class="btn-group">
-            <button
-              type="button"
-              class="btn dropdown-toggle"
-              style="color: greenyellow;"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Manufacturer
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <button class="dropdown-item" (click)="filterCarsByManufacturer('TATA')">TATA</button>
-              </li>
-              <li>
-                <button class="dropdown-item" (click)="filterCarsByManufacturer('Tesla')">Tesla</button>
-              </li>
-              <li>
-                <button class="dropdown-item" (click)="getAllCars()">All Rental Cars</button>
-              </li>
-            </ul>
-          </div>
-
-          <div class="btn-group">
-            <button
-              type="button"
-              class="btn dropdown-toggle"
-              style="color: greenyellow;"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              location
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <button class="dropdown-item" >Chennai</button>
-              </li>
-              <li>
-                <button class="dropdown-item">Hyderabad</button>
-              <li>
-                <button class="dropdown-item" >Bangalore</button>
-              </li>
-              <li>
-                <button class="dropdown-item" >Mumbai</button>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-
-       
-
-        <div class="row mt-4">
-          <div
-            class="col-sm-4 mt-4 custom-user-column"
-            *ngFor="let rentalcar of rentalCars"
+<div class="container">
+  <div class="d-flex gap-3 mt-4">
+    <div class="btn-group">
+      <button
+        type="button"
+        class="btn dropdown-toggle"
+        style="color: greenyellow"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Color
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <button class="dropdown-item" (click)="filterCarsByColor('navi')">
+            Navi
+          </button>
+        </li>
+        <li>
+          <button
+            class="dropdown-item"
+            (click)="filterCarsByColor('military green')"
           >
-            <div class="card bg-dark" style="width: 100%;">
-              <img
-                src="200.jpg"
-                class="card-img-top"
-                alt="..."
-                style="height: auto; width: 100%; padding-top: 15px; object-fit: cover;" 
-              />
-              <div class="card-body">
-                <h5 class="card-title" style="color: rgb(255, 255, 255)">
-                  {{ rentalcar.variant.manufacturer.name }} {{ rentalcar.variant.model }}
-                </h5>
-                <h4 class="card-text" style="color: greenyellow">
-                  {{ rentalcar.availabilityStatus }}
-                </h4>
-                <p class="card-text" style="color: greenyellow">
-                  {{ rentalcar.color }}
-                </p>
-                <p class="card-text" style="color: aliceblue">
-                  Begins from <span style="color: greenyellow">{{ rentalcar.pricePerDay }}</span> per day
-                </p>
-                <a href="/customer/rentalcars/single-rental-car" class="btn btn-dark" style="border-color: antiquewhite; color: greenyellow">RENT</a>
-              </div>
-            </div>
-          </div>
+            Military Green
+          </button>
+        </li>
+        <li>
+          <button class="dropdown-item" (click)="getAllCars()">
+            All Rental Cars
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button
+        type="button"
+        class="btn dropdown-toggle"
+        style="color: greenyellow"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Manufacturer
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <button
+            class="dropdown-item"
+            (click)="filterCarsByManufacturer('TATA')"
+          >
+            TATA
+          </button>
+        </li>
+        <li>
+          <button
+            class="dropdown-item"
+            (click)="filterCarsByManufacturer('Tesla')"
+          >
+            Tesla
+          </button>
+        </li>
+        <li>
+          <button class="dropdown-item" (click)="getAllCars()">
+            All Rental Cars
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button
+        type="button"
+        class="btn dropdown-toggle"
+        style="color: greenyellow"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        location
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <button class="dropdown-item">Chennai</button>
+        </li>
+        <li>
+          <button class="dropdown-item">Hyderabad</button>
+        </li>
+
+        <li>
+          <button class="dropdown-item">Bangalore</button>
+        </li>
+        <li>
+          <button class="dropdown-item">Mumbai</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div
+      class="col-sm-4 mt-4 custom-user-column"
+      *ngFor="let rentalcar of rentalCars"
+    >
+      <div class="card bg-dark" style="width: 100%">
+        <img
+          src="200.jpg"
+          class="card-img-top"
+          alt="..."
+          style="
+            height: auto;
+            width: 100%;
+            padding-top: 15px;
+            object-fit: cover;
+          "
+        />
+        <div class="card-body">
+          <h5 class="card-title" style="color: rgb(255, 255, 255)">
+            {{ rentalcar.variant.manufacturer.name }}
+            {{ rentalcar.variant.model }}
+          </h5>
+          <h4 class="card-text" style="color: greenyellow">
+            {{ rentalcar.availabilityStatus }}
+          </h4>
+          <p class="card-text" style="color: greenyellow">
+            {{ rentalcar.color }}
+          </p>
+          <p class="card-text" style="color: aliceblue">
+            Begins from
+            <span style="color: greenyellow">{{ rentalcar.pricePerDay }}</span>
+            per day
+          </p>
+          <a
+            href="/customer/dashboard/single-car/{{ rentalcar.id }}"
+            class="btn btn-dark"
+            style="border-color: antiquewhite; color: greenyellow"
+            >RENT</a>
         </div>
       </div>
     </div>
