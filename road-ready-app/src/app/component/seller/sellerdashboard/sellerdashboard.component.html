@@ -1,1 +1,35 @@
-<app-sellersidebar></app-sellersidebar>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3 col-xl-2 px-sm-2 px-0 bg-dark text-white sidebar-fixed">
+      <app-sellersidebar></app-sellersidebar>
+    </div>
+
+    <div class="col-12" *ngFor="let car of usedCars">
+      <div class="card mb-3" style="max-width: 500px;"> <!-- Add a fixed width to the card -->
+        <div class="card-body d-flex">
+          <img src="public/images/car2.jpg" class="img-fluid rounded-start me-3" alt="Car Image" style="max-width: 150px; height: auto;"> <!-- Reduce the image width -->
+          <div>
+            <h5 class="card-title">Car Details</h5>
+            <h6>Brand: <span class="text-muted">{{ car.model.brandname }}</span></h6>
+            <h6>Model: <span class="text-muted">{{ car.model.modelname }}</span></h6>
+            <h6>Price: <span class="text-muted">₹{{ car.price }}</span></h6>
+            <h6>Location: <span class="text-muted">{{ car.location }}</span></h6>
+            <h6>Seating Capacity: <span class="text-muted">{{ car.seatingCapacity }}</span></h6>
+            <h6>Mileage: <span class="text-muted">{{ car.mileage }} km</span></h6>
+            <h6>Color: <span class="text-muted">{{ car.color }}</span></h6>
+            <h6>Description: <span class="text-muted">{{ car.description }}</span></h6>
+            <h6>Year: <span class="text-muted">{{ car.year }}</span></h6>
+            <h6>Engine Number: <span class="text-muted">{{ car.engineNum }}</span></h6>
+            <h6>Registration Number: <span class="text-muted">{{ car.registrationNum }}</span></h6>
+            <h6>Ownership: <span class="text-muted">{{ car.ownership }}</span></h6>
+            <h6>Transmission Type: <span class="text-muted">{{ car.transmissionType }}</span></h6>
+            <h6>Fuel Type: <span class="text-muted">{{ car.fuelType }}</span></h6>
+            <h6>Status: <span class="text-muted">AVAILABLE</span></h6> <!-- Set initial verification status to Pending -->
+            <button class="btn btn-primary mt-3" routerLink="/bookinspectionpage">Book Inspection</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,60 +1,73 @@
+<app-titlenavabar></app-titlenavabar>
+
+<!-- Main Container -->
 <div class="container-fluid">
     <div class="row flex-nowrap">
-        <!-- Sidebar Component -->
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-            <app-sellersidebar></app-sellersidebar>
-        </div>
 
         <!-- Content Area -->
-        <div class="col py-3">
+        <div class="col py-3" style="margin-top: 100px;">
+
             <!-- Membership Content and Form -->
             <div class="row">
+
                 <!-- Column 1: Membership Information -->
-                <div class="col-md-6" style="background-color:#aaa;">
-                    <h2>Why Choose a Membership?</h2>
-                    <p>At Road Ready, we offer three exclusive membership options designed to enhance your car buying, selling, and rental experience. By joining our membership program, you can unlock various benefits tailored to meet your specific needs.</p>
-                    <ul>
-                        <li><strong>Premium Membership</strong> – Enjoy top-tier benefits like priority customer support, exclusive deals, and access to early listings of cars.</li>
-                        <li><strong>Gold Membership</strong> – Ideal for regular users who want a balance between cost and privileges, including special offers and discounts on rentals.</li>
-                        <li><strong>Silver Membership</strong> – Our entry-level membership that offers value for money and access to standard features of the platform.</li>
+                <div class="col-md-6 text-light" style="background-color: yellowgreen; padding: 30px; border-radius: 10px; color: black;">
+                    <h2 class="mb-4">Why Choose a Membership?</h2>
+                    <p>At <strong>Road Ready</strong>, we offer three exclusive membership options designed to enhance your car buying, selling, and rental experience. By joining our membership program, you can unlock various benefits tailored to meet your specific needs.</p>
+                    <ul class="list-unstyled mt-3">
+                        <li><i class="fas fa-star"></i> <strong>Premium Membership</strong> – Enjoy top-tier benefits like priority customer support, exclusive deals, and access to early listings of cars.</li>
+                        <li class="mt-2"><i class="fas fa-star"></i> <strong>Gold Membership</strong> – Ideal for regular users who want a balance between cost and privileges, including special offers and discounts on rentals.</li>
+                        <li class="mt-2"><i class="fas fa-star"></i> <strong>Silver Membership</strong> – Our entry-level membership that offers value for money and access to standard features of the platform.</li>
                     </ul>
-                    <p>Choose the membership that suits your needs and start enjoying the benefits today!</p>
+                    <p class="mt-4">Choose the membership that suits your needs and start enjoying the benefits today!</p>
                 </div>
 
                 <!-- Column 2: Membership Form -->
-                <div class="col-md-6" style="background-color:#bbb;">
+                <div class="col-md-6">
                     <div class="container mt-4">
-                        <div class="row">
-                            <div class="col-sm-3"></div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header text-center">
-                                        Membership
+                        <div class="row justify-content-center">
+                            <div class="col-md-10">
+                                <div class="card shadow-lg border-0">
+                                    <div class="card-header text-center text-light" style="background-color: yellowgreen; font-size: 1.2rem;">
+                                        Select Your Preferred Membership Plan
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body p-4">
+                                        <!-- Success and Error Messages -->
+                                        <div class="alert alert-success" role="alert" *ngIf="successMsg">
+                                            {{ successMsg }}
+                                        </div>
+                                        <div class="alert alert-danger" role="alert" *ngIf="errorMsg">
+                                            {{ errorMsg }}
+                                        </div>
+
+                                        <!-- Membership Form -->
                                         <form>
-                                            <!-- Radio buttons for membership types -->
+
+                                            <!-- Membership Type Selection -->
                                             <div class="mb-3 form-check text-center">
-                                                <input class="form-check-input" type="radio" name="membershipType" id="premium" value="premium" style="width: 2rem; height: 2rem;">
-                                                <label class="form-check-label" for="premium">Premium</label>
+                                                <input class="form-check-input" type="radio" name="membershipType" id="PREMIUM" [(ngModel)]="membershipType" value="PREMIUM" required>
+                                                <label class="form-check-label" for="PREMIUM">Premium</label>
                                             </div>
                                             <div class="mb-3 form-check text-center">
-                                                <input class="form-check-input" type="radio" name="membershipType" id="gold" value="gold" style="width: 2rem; height: 2rem;">
-                                                <label class="form-check-label" for="gold">Gold</label>
+                                                <input class="form-check-input" type="radio" name="membershipType" id="GOLD" [(ngModel)]="membershipType" value="GOLD" required>
+                                                <label class="form-check-label" for="GOLD">Gold</label>
                                             </div>
                                             <div class="mb-3 form-check text-center">
-                                                <input class="form-check-input" type="radio" name="membershipType" id="silver" value="silver" style="width: 2rem; height: 2rem;">
-                                                <label class="form-check-label" for="silver">Silver</label>
+                                                <input class="form-check-input" type="radio" name="membershipType" id="SILVER" [(ngModel)]="membershipType" value="SILVER" required>
+                                                <label class="form-check-label" for="SILVER">Silver</label>
                                             </div>
 
-                                            <div class="text-center">
-                                                <input type="submit" class="btn btn-primary w-100" value="Submit">
+                                            <!-- Subscribe Button -->
+                                            <div class="text-center mt-4">
+                                                <button class="btn btn-success btn-lg w-100" (click)="onClick()" [disabled]="!membershipType" style="background-color: yellowgreen; border-color: #27ae60;">
+                                                    Subscribe Now
+                                                </button>
                                             </div>
-                                        </form> 
+
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3"></div>
                         </div>
                     </div>
                 </div>

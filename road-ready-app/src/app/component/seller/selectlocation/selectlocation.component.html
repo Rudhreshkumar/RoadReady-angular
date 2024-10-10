@@ -1,0 +1,74 @@
+<!--<div class="fullscreen-container">
+    <div class="location-card">
+        <div class="card-header">
+            <h2>CONFIRM CAR LOCATION</h2>
+            <p>Our care expert will come here for verification and pick up</p>
+        </div>
+
+        <div class="location-options">
+            <label class="option">
+                <input type="radio" name="location" onclick="showAddressBox('home')">
+                HOME
+            </label>
+            <label class="option">
+                <input type="radio" name="location" onclick="showAddressBox('work')">
+                WORK
+            </label>
+            <label class="option">
+                <input type="radio" name="location" onclick="showAddressBox('other')">
+                OTHER
+            </label>
+        </div>
+
+        <div class="address-box" id="home-address">
+            <label for="home-address-text">Enter Home Address:</label>
+            <textarea id="home-address-text" rows="3" placeholder="Type your home address here"></textarea>
+        </div>
+
+        <div class="address-box" id="work-address">
+            <label for="work-address-text">Enter Work Address:</label>
+            <textarea id="work-address-text" rows="3" placeholder="Type your work address here"></textarea>
+        </div>
+
+        <div class="address-box" id="other-address">
+            <label for="other-address-text">Enter Other Address:</label>
+            <textarea id="other-address-text" rows="3" placeholder="Type your other address here"></textarea>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to display the appropriate address box
+    function showAddressBox(location) {
+        // Hide all address boxes first
+        document.getElementById('home-address').style.display = 'none';
+        document.getElementById('work-address').style.display = 'none';
+        document.getElementById('other-address').style.display = 'none';
+
+        // Show the selected address box
+        if (location === 'home') {
+            document.getElementById('home-address').style.display = 'block';
+        } else if (location === 'work') {
+            document.getElementById('work-address').style.display = 'block';
+        } else if (location === 'other') {
+            document.getElementById('other-address').style.display = 'block';
+        }
+    }
+</script>-->
+<div class="location-selector">
+    <label>Where should we inspect your car?</label>
+    <div class="radio-buttons">
+      <input type="radio" id="home" name="location" value="home">
+      <label for="home">Home</label>
+      <br>
+      <input type="radio" id="work" name="location" value="work">
+      <label for="work">Work</label>
+      <br>
+      <input type="radio" id="other" name="location" value="other">
+      <label for="other">Other</label>
+    </div>
+    <div class="address-box">
+      <label>Address</label>
+      <input type="text" id="address" name="address" placeholder="Enter address">
+    </div>
+  </div>

@@ -1,0 +1,13 @@
+.sidebar-fixed {
+    position: fixed; /* Fixed position */
+    top: 0; /* Align to the top of the page */
+    left: 0; /* Align to the left of the page */
+    height: 100vh; /* Full height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    z-index: 1000; /* Ensure it stays above other content */
+  }
+  
+  .container-fluid {
+    margin-left: 250px; /* Adjust this value to match the width of your sidebar */
+  }
+  

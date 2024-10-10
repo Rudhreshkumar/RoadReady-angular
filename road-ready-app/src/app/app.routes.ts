@@ -11,6 +11,14 @@ import { HomeComponent } from './component/landing-page/home/home.component';
 import { AboutComponent } from './component/landing-page/about/about.component';
 import { MembershipComponent } from './component/seller/membership/membership.component';
 
+import { UsedcarComponent } from './component/seller/usedcar/usedcar.component';
+import { OnboardComponent } from './component/usedcaradd/onboard/onboard.component';
+import { ModelComponent } from './component/usedcaradd/model/model.component';
+import { BookinspectionComponent } from './component/seller/bookinspection/bookinspection.component';
+import { SelectlocationComponent } from './component/seller/selectlocation/selectlocation.component';
+import { CheckingpriceComponent } from './component/seller/checkingprice/checkingprice.component';
+import { UsedcardetailsComponent } from './component/usedcaradd/usedcardetails/usedcardetails.component';
+
 export const routes: Routes = [
     {
         "path":"",component:LandingPageComponent
@@ -28,8 +36,26 @@ export const routes: Routes = [
         "path":"seller/dashboard",component:SellerdashboardComponent
     },
     {
+        "path":"usedcar/add",component:OnboardComponent
+    },
+   // {
+      //  "path": 'model/:modelId', component: ModelComponent
+  //  },
+    {
+        "path":'bookinspectionpage',component:BookinspectionComponent
+    },
+    {
+        "path":"selectlocation",component:SelectlocationComponent
+    },
+    {
         "path":"addmembership",component:MembershipComponent
     },
+    {
+        "path":"checkprice",component:CheckingpriceComponent
+    },
+   /* {
+        "path":"usedcaradd/:modelId",component:UsedcardetailsComponent
+    },*/
     {
         "path":"customer/dashboard",component:CustomerdashboardComponent
     },
