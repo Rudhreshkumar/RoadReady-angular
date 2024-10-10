@@ -1,27 +1,39 @@
 export class UsedCar{
-  id:number;
-  brand?: string;
-  color?: string;
+  id?:number;
   model?: string;
-  fuelType?: string;
-  transmissionType?: string;
-  location?:string;
-  mileage?:number;
-  year?:number;
+  brand?: string;
   price?:number;
+  location?:string;
+  seatingCapacity?:number;
+  mileage?:number;
+  color?: string;
+  description?:string;
+  year?:number;
+  engineNum?:string;
+  registrationNum?:string;
+  ownership?:number;
+  transmissionType?: string;
+  fuelType?: string;
+  status?:string;
   imagePath?: string;
 
-  constructor(id: number,brand?: string, color?: string, model?: string, fuelType?: string, transmissionType?: string,location?:string,mileage?:number,year?:number,price?:number,imagePath?: string) {
+  constructor(id?:number,model?:string,brand?: string,price?:number,location?:string, seatingCapacity?:number,mileage?:number, color?: string,description?:string,year?:number,engineNum?:string, registrationNum?:string, ownership?:number, transmissionType?: string,fuelType?: string,status?:string,imagePath?: string) {
     this.id = id;
-    this.brand = brand;
-    this.color = color;
     this.model = model;
-    this.fuelType = fuelType;
-    this.transmissionType = transmissionType;
-    this.location=location;
-    this.mileage=mileage;
-    this.year=year;
+    this.brand = brand;
     this.price=price;
+    this.location=location;
+    this.seatingCapacity=seatingCapacity;
+    this.mileage=mileage;
+    this.color = color;
+    this.description=description;
+    this.year=year;
+    this.engineNum=engineNum;
+    this.registrationNum=registrationNum;
+    this.ownership=ownership;
+    this.transmissionType = transmissionType;
+    this.fuelType = fuelType;
+    this.status=status; 
     this.imagePath=imagePath;
   }
 }

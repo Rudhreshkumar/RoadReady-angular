@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UsedcarNavbarComponent } from "./usedcar-navbar/usedcar-navbar.component";
 import { UsedcarSidebarComponent } from './usedcar-sidebar/usedcar-sidebar.component';
 import { CustomerService } from '../../../service/customer.service';
@@ -13,27 +13,39 @@ import { UsedCar } from '../../../../model/usedCar.model';
   templateUrl: './usedcars.component.html',
   styleUrl: './usedcars.component.css'
 })
-export class UsedcarsComponent {
+export class UsedcarsComponent implements OnInit {
 
   usedCars: any[];
   storedCars: any[] = [];
-
-  selectedBrand?: string;
-  selectedColor?: string;
-  selectedModel?: string;
-  selectedFuelType?: string;
-  selectedTransmissionType?: string;
-  selectedLocation?: string;
-  selectedMileage?: number;
-  selectedYear?: number;
   filteredUsedCars: UsedCar[] = [];
+  selectedModel?: string;
+  selectedBrand?: string;
+  selectedPrice?:number;
+  selectedLocation?: string;
+  selectedSeatingCapacity?:number;
+  selectedMileage?: number;
+  selectedColor?: string;
+  selectedDescription?:string;
+  selectedYear?: number; 
+  selectedEngineNum?:string;
+  selectedRegistrationNum?:string;
+  selectedOwnership?:number;
+  selectedTransmissionType?: string;
+  selectedFuelType?: string;
+  selectStatus?:string;
   
+  constructor(private customerService:CustomerService){}
 
-  constructor(private customerService:CustomerService){
-    customerService.getUsedCars().subscribe({
+  ngOnInit(): void {
+    this.getAllCars();
+  }
+
+  getAllCars() {
+    this.customerService.getAllCars().subscribe({
       next:(data)=>{
         this.usedCars=data;
         this.storedCars=data;
+        this.filteredUsedCars = this.storedCars;
         console.log(this.usedCars);
       },
       error:(err)=>{
@@ -42,34 +54,39 @@ export class UsedcarsComponent {
     });
   }
 
-  getAllCars() {
-    this.filteredUsedCars = this.storedCars;
-  }
-
-
   applyFilter() {
+    if (this.selectedModel||this.selectedBrand||this.selectedPrice ||this.selectedLocation|| this.selectedSeatingCapacity ||this.selectedMileage || this.selectedColor || this.selectedDescription||this.selectedYear||this.selectedEngineNum||this.selectedRegistrationNum||this.selectedOwnership||this.selectedTransmissionType||this.selectedFuelType ||this.selectStatus) {
     const filter = new UsedCar(
-      0, // Placeholder for id; not needed for filtering
-      this.selectedBrand,
-      this.selectedColor,
+      0,
       this.selectedModel,
-      this.selectedFuelType,
-      this.selectedTransmissionType,
+      this.selectedBrand,
+      this.selectedPrice,
       this.selectedLocation,
+      this.selectedSeatingCapacity,
       this.selectedMileage,
-      this.selectedYear
+      this.selectedColor,
+      this.selectedDescription,
+      this.selectedYear,
+      this.selectedEngineNum,
+      this.selectedRegistrationNum,
+      this.selectedOwnership,  
+      this.selectedTransmissionType,
+      this.selectedFuelType,
+      this.selectStatus
     );
-
-    // Call the service to get filtered used cars
     this.customerService.getFilteredUsedCars(filter).subscribe({
       next:(usedCars) => {
-        this.filteredUsedCars = usedCars; // Update your filtered used cars
+        this.filteredUsedCars = usedCars;
       },
       error:(err) => {
         console.error('Error fetching used cars', err);
       }
   });
-  }
+  }else {
+      
+      this.getAllCars();
   
+} 
+  }
 }
 

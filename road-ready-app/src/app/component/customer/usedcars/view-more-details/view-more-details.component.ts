@@ -8,7 +8,7 @@ import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule} from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../../../service/user.service';
 import { User } from '../../../../../model/user.model';
 
@@ -30,15 +30,17 @@ export class ViewMoreDetailsComponent implements OnInit{
   username: string = '';
   modalTitle: string = '';
   modalDescription: string = '';
-  usedCarId: number = 1;
-  customerId: number = 1;
+  usedCarId: number;
 
-  constructor(private customerService:CustomerService,private router:Router,private userService:UserService){}
+  constructor(private customerService:CustomerService,private router:Router,private userService:UserService,private actRoute:ActivatedRoute){
+    this.usedCarId=Number(this.actRoute.snapshot.paramMap.get('id'));
+  }
 
   ngOnInit():void{
+      this.getCarDetails(this.usedCarId);
+  }
 
-    const carId=1;
-
+    getCarDetails(carId:number):void{
     this.customerService.getUsedCarsById(carId).subscribe({
       next:(res)=>{
         this.usedCar = res; // Store the fetched used car details
@@ -50,12 +52,12 @@ export class ViewMoreDetailsComponent implements OnInit{
     })
   }
 
-wishlistClick() {
+wishlistClick(usedCarId:number) {
   this.modalTitle = 'Add to Wishlist';
   this.modalDescription = 'Please log in to add this car to your wishlist.';
 }
 
-buyClick(){
+buyClick(usedCarId:number){
   this.modalTitle = 'Proceed to Buy';
   this.modalDescription = 'Please log in to proceed with the purchase.';
 }

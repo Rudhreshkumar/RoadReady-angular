@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { UsedCar } from "../../model/usedCar.model";
+import { Customer } from "../../model/customer.model";
 
 
 
@@ -30,8 +31,24 @@ import { UsedCar } from "../../model/usedCar.model";
     }
 
     getFilteredUsedCars(filter: Partial<UsedCar>):Observable<UsedCar[]>{
-      return this.http.post<UsedCar[]>('http://localhost:8083/Usedcars/filter',filter);
-  
+      return this.http.post<UsedCar[]>('http://localhost:8083/Usedcars/filter',filter); 
     }
-  }
+
+   addCustomer(obj:Customer):Observable<Customer>{
+    return this.http.post<Customer>('http://localhost:8083/auth/customer/signup',obj)
+   }
+
+   uploadPan(formData:FormData,id:any){
+    return this.http.post('http://localhost:8083/customer/panimage/upload/'+id,formData)
+   }
+
+   uploadDriverLicense(formData:FormData,id:any){
+    return this.http.post('http://localhost:8083/customer/licensceimage/upload/'+id,formData)
+   }
+
+   getAllCars():Observable<UsedCar[]>{
+    return this.http.get<UsedCar[]>('http://localhost:8083/Usedcars/getcarsdto')
+   }
+
+}
   

@@ -102,9 +102,9 @@
                                 <p>Location: {{ usedCar.location }}</p>
                                 <div class="d-flex justify-content-between mt-3">
                                     <!-- Trigger the modal for Add to Wishlist -->
-                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal" (click)="wishlistClick()">Add to Wishlist</button>
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal" (click)="wishlistClick(usedCar.id)">Add to Wishlist</button>
                                     <!-- Trigger the modal for Proceed to Buy -->
-                                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editProfileModal" (click)="buyClick()">Proceed to Buy</button>
+                                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editProfileModal" (click)="buyClick(usedCar.id)">Proceed to Buy</button>
                                 </div>
                             </li>
                         </ul>

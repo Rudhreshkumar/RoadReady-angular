@@ -1,0 +1,49 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">Sign Up</div>
+        <div class="card-body">
+          <form (ngSubmit)="onAddCustomer()">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control" [(ngModel)]="customer.name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label>Address</label>
+              <input type="text" class="form-control" [(ngModel)]="customer.address" name="address" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="text" class="form-control" [(ngModel)]="customer.phoneNumber" name="phoneNumber" required>
+            </div>
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" class="form-control" [(ngModel)]="customer.user.username" name="username" required>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" [(ngModel)]="customer.user.password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Customer</button>
+          </form>
+
+          <div *ngIf="show" class="mt-4">
+            <h5>Upload PAN Card:</h5>
+            <input type="file" (change)="onPanCardChange($event)">
+            <button (click)="onUploadPanCard()">Upload PAN Card</button>
+            <h5>Upload Driver License:</h5>
+            <input type="file" (change)="onDriverLicenseChange($event)">
+            <button (click)="onUploadDriverLicense()">Upload Driver License</button>
+          </div>
+
+          <div class="mt-4" *ngIf="imageMsg !== ''">
+            <div class="alert alert-primary">{{ imageMsg }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

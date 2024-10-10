@@ -13,9 +13,9 @@ import { RentalcarsComponent } from './component/customer/rentalcars/rentalcars.
 import { UsedcarsComponent } from './component/customer/usedcars/usedcars.component';
 import { ViewMoreDetailsComponent } from './component/customer/usedcars/view-more-details/view-more-details.component';
 import { PurchaseComponent } from './component/customer/usedcars/purchase/purchase.component';
-import { SignUpComponent } from './component/customer/usedcars/sign-up/sign-up.component';
 import { SingleRentalCarComponent } from './component/customer/rentalcars/single-rental-car/single-rental-car.component';
 import { BookingComponent } from './component/customer/rentalcars/booking/booking.component';
+import { SignupComponent } from './component/customer/usedcars/signup/signup.component';
 
 
 
@@ -63,10 +63,10 @@ export const routes: Routes = [
         "path":"customer/usedcars",component:UsedcarsComponent
     },
     {
-        "path":"usedcars/view-more-details",component:ViewMoreDetailsComponent
+        "path":"usedcars/view-more-details/:id",component:ViewMoreDetailsComponent
     },
     {
-        "path":"signup",component:SignUpComponent
+        "path":"signup",component:SignupComponent
     },
     {
         "path":"usedcars/purchase",component:PurchaseComponent

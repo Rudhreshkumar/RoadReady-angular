@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Edit Book Details  
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-dark" role="alert" *ngIf="successMsg">
+                        {{successMsg}}
+                    </div>
+                    <div class="alert alert-primary" role="alert" *ngIf="errorMsg">
+                        {{errorMsg}}
+                    </div>
+                    <div>
+                        <label>Book Title: </label>
+                        <input class="form-control" type="text" [(ngModel)]="title" (change)="resetMsg()" required>
+                    </div>
+                    <div>
+                        <label>Category: </label>
+                        <select class="form-control" [(ngModel)]="category" (change)="resetMsg()" required>
+                            <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Price: </label>
+                        <input class="form-control" type="number" [(ngModel)]="price" (change)="resetMsg()" required>
+                    </div>
+                    <div>
+                        <label>Description: </label>
+                        <textarea class="form-control" [(ngModel)]="description" (change)="resetMsg()" required></textarea>
+                    </div>
+                    <div>
+                        <label>Quantity: </label>
+                        <input class="form-control" type="number" [(ngModel)]="qty" (change)="resetMsg()" required>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary" (click)="onClick()">Edit Book</button>
+                    <button class="btn btn-secondary" (click)="onShowClick()" *ngIf="show">Go to Book List</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>
