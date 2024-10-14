@@ -13,9 +13,11 @@ import { RentalcarsComponent } from './component/customer/rentalcars/rentalcars.
 import { UsedcarsComponent } from './component/customer/usedcars/usedcars.component';
 import { ViewMoreDetailsComponent } from './component/customer/usedcars/view-more-details/view-more-details.component';
 import { PurchaseComponent } from './component/customer/usedcars/purchase/purchase.component';
-import { SignUpComponent } from './component/customer/usedcars/sign-up/sign-up.component';
 import { SingleRentalCarComponent } from './component/customer/rentalcars/single-rental-car/single-rental-car.component';
 import { BookingComponent } from './component/customer/rentalcars/booking/booking.component';
+import { SignupComponent } from './component/customer/usedcars/signup/signup.component';
+import { MyactivityComponent } from './component/customer/myactivity/myactivity.component';
+import { ProfileComponent } from './component/customer/profile/profile.component';
 
 import { UsedcarComponent } from './component/seller/usedcar/usedcar.component';
 import { OnboardComponent } from './component/usedcaradd/onboard/onboard.component';
@@ -94,11 +96,30 @@ export const routes: Routes = [
         "path":"customer/my-purchase",component:MyPurchaseComponent
     },
     {
+        "path":"customer/my-activity",component:MyactivityComponent
+    },
+    {
         "path":"customer/rental-history",component:RentalHistoryComponent
+    },
+    {
+        "path":"customer/profile",component:ProfileComponent
     },
     {
         "path":"customer/profile-settings",component:ProfileSettingsComponent
     },
+    {
+        "path":"customer/usedcars",component:UsedcarsComponent
+    },
+    {
+        "path":"usedcars/view-more-details/:id",component:ViewMoreDetailsComponent
+    },
+    {
+        "path":"signup",component:SignupComponent
+    },
+    {
+        "path":"usedcars/purchase/:id",component:PurchaseComponent
+    },
+
   {
     path: 'customer/dashboard',
     component: CustomerdashboardComponent,
@@ -140,22 +161,6 @@ export const routes: Routes = [
   {
     path: 'customer/rentalcars/booking',
     component: BookingComponent,
-  },
-  {
-    path: 'customer/usedcars',
-    component: UsedcarsComponent,
-  },
-  {
-    path: 'usedcars/view-more-details',
-    component: ViewMoreDetailsComponent,
-  },
-  {
-    path: 'signup',
-    component: SignUpComponent,
-  },
-  {
-    path: 'usedcars/purchase',
-    component: PurchaseComponent,
   },
 
 ];

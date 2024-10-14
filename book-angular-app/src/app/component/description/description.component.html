@@ -1,0 +1,12 @@
+<div class="container mt-4">
+    <h2 *ngIf="book">{{ book?.title }}</h2>    
+    <div *ngIf="book">
+      <h4>Description:</h4> 
+      <p>{{ book?.description }}</p> 
+    </div>
+    
+    <div *ngIf="errorMsg" class="alert alert-danger">
+      <p>{{ errorMsg }}</p>
+    </div> 
+    <a routerLink="/book" class="btn btn-primary mt-3">Back to Book List</a> 
+  </div>

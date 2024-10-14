@@ -1,2 +1,59 @@
+.wishlist-container {
+    background-color: #1E1E1E;
+    color: #FFF;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .wishlist-card {
+    background-color: #525655;
+    color: #FFF;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .tag {
+    color: greenyellow; /* Change text color to green */
+    font-weight: bold; /* Make the text bold */
+    font-size: 0.9rem; /* Font size */
+    position: absolute; /* To position it over the image */
+    top: 30px; /* Adjust vertical position */
+    left: 10px; /* Adjust horizontal position */
+    z-index: 2; /* Ensure it is above other elements */
+}
 
+  .card-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+   
+  .card-title {
+    font-size: 1.5rem;
+  }
+  
+  .card-link {
+    color: #00BFFF;
+    font-weight: bold;
+    text-decoration: none;
+  } 
+
+  .availability-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+  }
+  
+  .card-body {
+    position: relative; /* Ensure button can float to right */
+  }
+  .btn-danger {
+    float: right;
+    display: flex;
+    margin: 0; 
+    justify-content: center;
+  } 
+  
+    
   

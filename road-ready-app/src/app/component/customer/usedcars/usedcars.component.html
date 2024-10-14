@@ -9,7 +9,6 @@
     <div class="col-sm-10" style="padding: 0; margin: 0;">
       <app-usedcar-navbar></app-usedcar-navbar>
 
-      <!-- Dropdown Menu Below Navbar -->
       <div class="d-flex justify-content-center mt-3">
         <div class="dropdown">
           <button
@@ -22,101 +21,107 @@
             Select Car Attributes
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <!-- Brand Dropdown -->
+
+            <!-- Brand Filter Options -->
             <li class="dropdown-submenu">
               <a class="dropdown-item dropdown-toggle" href="#">Brand</a>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" (click)="selectedBrand = 'Toyota'; applyFilter()">Toyota</button></li>
-                <li><button class="dropdown-item" (click)="selectedBrand = 'Maruti'; applyFilter()">Maruti</button></li>
-                <li><button class="dropdown-item" (click)="selectedBrand = 'Ford'; applyFilter()">Ford</button></li>
+                <li><button class="dropdown-item" (click)="filter.brand = 'Toyota'; applyFilter()">Toyota</button></li>
+                <li><button class="dropdown-item" (click)="filter.brand = 'Maruti'; applyFilter()">Maruti</button></li>
+                <li><button class="dropdown-item" (click)="filter.brand = 'Ford'; applyFilter()">Ford</button></li>
+                <li><button class="dropdown-item" (click)="filter.brand = 'Volkswagen'; applyFilter()">Volkswagen</button></li>
+                <li><button class="dropdown-item" (click)="filter.brand = 'Honda'; applyFilter()">Honda</button></li>
+                <li><button class="dropdown-item" (click)="filter.brand = 'Kia'; applyFilter()">Kia</button></li>
               </ul>
             </li>
 
-            <!-- Model Dropdown -->
+            <!-- Model Filter Options -->
             <li class="dropdown-submenu">
               <a class="dropdown-item dropdown-toggle" href="#">Model</a>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" (click)="selectedModel = 'Swift'; applyFilter()">Swift</button></li>
-                <li><button class="dropdown-item" (click)="selectedModel = 'Model2'; applyFilter()">Model2</button></li>
-                <li><button class="dropdown-item" (click)="selectedModel = 'Model3'; applyFilter()">Model3</button></li>
+                <li><button class="dropdown-item" (click)="filter.model = 'Corolla'; applyFilter()">Corolla</button></li>
+                <li><button class="dropdown-item" (click)="filter.model = 'Innova'; applyFilter()">Innova</button></li>
+                <li><button class="dropdown-item" (click)="filter.model = 'Swift'; applyFilter()">Swift</button></li>
+                <li><button class="dropdown-item" (click)="filter.model = 'SUV'; applyFilter()">SUV</button></li>
+                <li><button class="dropdown-item" (click)="filter.model = 'Figo'; applyFilter()">Figo</button></li>
+                <li><button class="dropdown-item" (click)="filter.model = 'Civic'; applyFilter()">Civic</button></li>
+                <li><button class="dropdown-item" (click)="filter.model = 'City'; applyFilter()">City</button></li>
+                <li><button class="dropdown-item" (click)="filter.model = 'Aspire'; applyFilter()">Aspire</button></li>
+                <li><button class="dropdown-item" (click)="filter.model = 'Carrens'; applyFilter()">Carrens</button></li>
+                <li><button class="dropdown-item" (click)="filter.model = 'S25 Series'; applyFilter()">S25 Series</button></li>
               </ul>
             </li>
 
-            <!-- Color Dropdown -->
+            <!-- Color Filter Options -->
             <li class="dropdown-submenu">
               <a class="dropdown-item dropdown-toggle" href="#">Color</a>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" (click)="selectedColor = 'Red'; applyFilter()">Red</button></li>
-                <li><button class="dropdown-item" (click)="selectedColor = 'Blue'; applyFilter()">Blue</button></li>
-                <li><button class="dropdown-item" (click)="selectedColor = 'Black'; applyFilter()">Black</button></li>
+                <li><button class="dropdown-item" (click)="filter.color = 'Red'; applyFilter()">Red</button></li>
+                <li><button class="dropdown-item" (click)="filter.color = 'Blue'; applyFilter()">Blue</button></li>
+                <li><button class="dropdown-item" (click)="filter.color = 'Black'; applyFilter()">Black</button></li>
+                <li><button class="dropdown-item" (click)="filter.color = 'Silver'; applyFilter()">Silver</button></li>
+                <li><button class="dropdown-item" (click)="filter.color = 'Grey'; applyFilter()">Grey</button></li>
               </ul>
             </li>
 
+            <!-- Location Filter Options -->
             <li class="dropdown-submenu">
               <a class="dropdown-item dropdown-toggle" href="#">Location</a>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" (click)="selectedLocation = 'Mumbai'; applyFilter()">Mumbai</button></li>
-                <li><button class="dropdown-item" (click)="selectedLocation = 'Chennai'; applyFilter()">Chennai</button></li>
-                <li><button class="dropdown-item" (click)="selectedLocation = 'Hyderabad'; applyFilter()">Hyderabad</button></li>
+                <li><button class="dropdown-item" (click)="filter.location = 'Mumbai'; applyFilter()">Mumbai</button></li>
+                <li><button class="dropdown-item" (click)="filter.location = 'Chennai'; applyFilter()">Chennai</button></li>
+                <li><button class="dropdown-item" (click)="filter.location = 'Hyderabad'; applyFilter()">Hyderabad</button></li>
+                <li><button class="dropdown-item" (click)="filter.location = 'Bangalore'; applyFilter()">Bangalore</button></li>
+                <li><button class="dropdown-item" (click)="filter.location = 'Delhi'; applyFilter()">Delhi</button></li>
               </ul>
             </li>
 
-            <!-- Fuel Type Dropdown -->
+            <!-- Fuel Type Filter Options -->
             <li class="dropdown-submenu">
               <a class="dropdown-item dropdown-toggle" href="#">Fuel Type</a>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" (click)="selectedFuelType='Petrol'; applyFilter()">Petrol</button></li>
-                <li><button class="dropdown-item" (click)="selectedFuelType='Diesel'; applyFilter()">Diesel</button></li>
-                <li><button class="dropdown-item" (click)="selectedFuelType='Electric'; applyFilter()">Electric</button></li>
+                <li><button class="dropdown-item" (click)="filter.fuelType = 'PETROL'; applyFilter()">Petrol</button></li>
+                <li><button class="dropdown-item" (click)="filter.fuelType = 'DIESEL'; applyFilter()">Diesel</button></li>
+                <li><button class="dropdown-item" (click)="filter.fuelType = 'ELECTRIC'; applyFilter()">Electric</button></li>
               </ul>
             </li>
 
-            <!-- Transmission Type Dropdown -->
+            <!-- Transmission Type Filter Options -->
             <li class="dropdown-submenu">
               <a class="dropdown-item dropdown-toggle" href="#">Transmission Type</a>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" (click)="selectedTransmissionType='Automatic'; applyFilter()">Automatic</button></li>
-                <li><button class="dropdown-item" (click)="selectedTransmissionType='Manual'; applyFilter()">Manual</button></li>
+                <li><button class="dropdown-item" (click)="filter.transmissionType = 'AUTOMATIC'; applyFilter()">Automatic</button></li>
+                <li><button class="dropdown-item" (click)="filter.transmissionType = 'MANUAL'; applyFilter()">Manual</button></li>
               </ul>
             </li>
+
           </ul>
         </div>
       </div>
 
-      <!-- All Cars Button -->
-      <button class="btn" (click)="getAllCars()" style="background:#3630a3;color:white; margin-top: 10px;">
-        Show All Cars
-      </button>
-
-      <!-- Car Details -->
+      <!-- Card Display Section -->
       <div class="row mt-4">
         <div
           class="col-sm-6 col-md-3 d-flex align-items-stretch mt-3 custom-user-column"
           *ngFor="let usedcar of filteredUsedCars"
         >
-          <div class="card bg-dark" style="width: 100%; padding: 10px;">
+          <div class="card custom-car-card" style="width: 110%; padding: 10px;"> <!-- Increased Width -->
             <img
-              [src]="usedcar.imagePath ? usedcar.imagePath : 'assets/placeholder.jpg'"
+              [src]="usedcar.imagePath"
               class="card-img-top"
               alt="Car image"
               style="height: 180px; width: 100%; padding-top: 10px; object-fit: cover;"
             />
-            <div class="card-body">
-              <h5 class="card-title" style="color: rgb(255, 255, 255); font-size: 1.1rem;">
-                {{ usedcar.brand }} {{ usedcar.model }}
-              </h5>
-              <h6 class="card-text" style="color: greenyellow; font-size: 0.9rem;">
-                {{ usedcar.mileage }} km&nbsp;&nbsp;{{ usedcar.fuelType }}&nbsp;&nbsp;{{ usedcar.transmissionType }}
-              </h6>
-              <h5 class="card-text" style="color: rgb(255, 47, 127); font-size: 1rem;">
-                ₹ {{ usedcar.price }}
-              </h5>
-              <a routerLink="/usedcars/view-more-details" class="btn btn-dark" style="border-color: antiquewhite; color: greenyellow; font-size: 0.85rem;">
+            <div class="card-body" style="padding: 5px;"> <!-- Reduced Padding -->
+              <h3 class="card-title" style="margin-bottom: 5px;">{{ usedcar.brand }} {{ usedcar.model }}</h3> <!-- Reduced Margin -->
+              <p class="card-text" style="margin-bottom: 3px;">{{ usedcar.mileage }} km &nbsp;&nbsp;{{usedcar.fuelType}}&nbsp;&nbsp;{{usedcar.transmissionType}} </p> <!-- Reduced Margin -->
+              <p class="card-text" style="margin-bottom: 3px;">₹{{ usedcar.price }}</p> <!-- Reduced Margin -->
+             
+              <a [routerLink]="['/usedcars/view-more-details',usedcar.id]" class="btn btn-dark" style="border-color: antiquewhite; color: greenyellow; font-size: 0.85rem;">
                 View More Details
               </a>
-              <p class="card-text" style="color: aliceblue; font-size: 0.85rem;">
-                {{ usedcar.location }}
-              </p>
+              <hr style="margin: 10px 0;"> <!-- Divider -->
+              <p class="card-text" style="margin-bottom: 3px;">{{ usedcar.location }}</p> <!-- Location below button -->
             </div>
           </div>
         </div>

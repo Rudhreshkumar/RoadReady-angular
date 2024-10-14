@@ -1,0 +1,106 @@
+.sidebar-fixed {
+    position: fixed; /* Keep it fixed */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full height */
+    width: 250px; /* Adjust this as per your original design */
+    overflow-y: auto; /* Enable scrolling if necessary */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.myactivity-container {
+    margin-left: 260px; /* Adjust this based on the sidebar width */
+}
+
+.card {
+    border-radius: 12px; /* Round edges of cards */
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+/* Activity Cards */
+.card-body {
+    background-color: #525655; /* Darker gray for card body */
+    padding: 15px;
+    border-radius: 10px; /* Round edges of card body */
+}
+
+/* Background Color for Activity Cards */
+.card.bg-gray-300 {
+    background-color: #1E1E1E; /* Keep cards dark */
+    border-radius: 10px; /* Round edges of background color */
+}
+
+/* Image Styles */
+.img-fluid {
+    border-radius: 8px; /* More rounded corners for car images */
+}
+
+/* Typography Styles */
+h2, h3, h4 {
+    color: white; /* White color for headings */
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+/* Text Styles */
+.text-xs {
+    font-size: 0.75rem; /* Small text size */
+    color: #ffffff; /* White text for small text */
+}
+
+.text-sm {
+    font-size: 0.875rem; /* Slightly larger than xs */
+    color: #ffffff; /* White text for small text */
+}
+
+.text-lg {
+    font-size: 1.125rem; /* Larger text size for major headings */
+    color: white; /* White color for large text */
+}
+
+/* Comments Section */
+.list-disc {
+    margin-left: 20px; /* Indent comments list */
+    color: #ffffff; /* White color for comments text */
+}
+
+/* Input and Button Styles */
+input[type="text"] {
+    border: none;
+    background-color: #333; /* Dark background for input */
+    color: white; /* White text for input */
+    border-radius: 20px; /* Round edges */
+}
+
+input[type="text"]::placeholder {
+    color: #bbb; /* Placeholder color */
+}
+
+button {
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button.bg-lime-500 {
+    background-color: #84cc16; /* Lime green button */
+    transition: background-color 0.3s ease;
+}
+
+button.bg-lime-500:hover {
+    background-color: #75b823; /* Darker lime on hover */
+}
+
+/* Flex Container for Comments Input */
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-grow {
+    flex-grow: 1; /* Allow input to take available space */
+}
