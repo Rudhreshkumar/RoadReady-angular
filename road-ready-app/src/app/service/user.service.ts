@@ -9,6 +9,8 @@ import { User } from '../../model/user.model';
 })
 export class UserService {
 
+  private username: string;
+
   constructor(private http: HttpClient) { }
 
   getToken(username: any, password: any) : Observable<any> {
@@ -37,4 +39,16 @@ addCustomerSignUp(customerData: any): Observable<any> {
 
 getRentalCars() : Observable<any>{
   return this.http.get<any>('http://localhost:8083/executive/rentalcars/all')
-}}
+}
+
+
+
+  setUsername(username: string) {
+    this.username = username;
+  }
+
+  getUsername() {
+    return this.username || localStorage.getItem('username');
+  }
+
+}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CustomerService } from '../../../../service/customer.service';
 
 @Component({
   selector: 'app-usedcar-navbar',
@@ -9,5 +10,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './usedcar-navbar.component.css'
 })
 export class UsedcarNavbarComponent {
+
+  constructor(private customerService:CustomerService){}
 
 }

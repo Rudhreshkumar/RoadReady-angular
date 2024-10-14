@@ -1,1 +1,53 @@
-<app-customersidebar></app-customersidebar>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            <app-customersidebar></app-customersidebar>
+        </div>
+        <div class="col-md-9">
+            <div class="purchase-container">
+                <h2 class="purchase-header">Your Purchases</h2>
+                <p class="purchase-description">Here is a list of all the cars you have purchased.</p>                             
+                <div *ngIf="purchases && purchases.length > 0;">
+                    <p>You have made {{ purchases.length }} purchase(s).</p>
+                    <div class="row">
+                        <div class="col-md-12" *ngFor="let purchase of purchases">
+                            <div class="card mb-4 wishlist-card">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col-md-3 position-relative">
+                                        <img
+                                            [src]="purchase.usedCar.imagePath || 'assets/default-car.jpg'"
+                                            class="card-img-top"
+                                            alt="Car image"
+                                            style="height: 180px; width: 100%; padding-top: 10px; object-fit: cover;"
+                                        />
+                                        <div class="availability-tag">
+                                            <span class="tag">Verified</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 d-flex flex-column justify-content-between">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                {{ purchase.usedCar.model.brand.brandname }} 
+                                                {{ purchase.usedCar.model.modelname }} 
+                                                ({{ purchase.usedCar.year }})
+                                            </h5>
+                                            <p class="card-text">
+                                                <strong>Registration Number:</strong> {{ purchase.usedCar.registrationNum }}<br>
+                                                <strong>Ownership:</strong> {{ purchase.usedCar.ownership }}<br>
+                                                <strong>Purchased on:</strong> {{ purchase.dateOfPurchase }}<br>
+                                                <strong>Total Amount:</strong> ₹{{ purchase.totalAmount }}
+                                            </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ng-template #noPurchases>
+                    <p class="text-muted">You have not made any purchases yet.</p>
+                </ng-template>
+
+            </div>
+        </div>
+    </div>
+</div>

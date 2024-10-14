@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CustomerService } from '../../../../service/customer.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Customer } from '../../../../../model/customer.model';
@@ -14,7 +14,7 @@ import { NgFor, NgIf } from '@angular/common';
 })
 export class SignupComponent {
 
-  customer: Customer = {
+  customer = {
     id:'',
     name: '',
     address: '',
@@ -24,84 +24,40 @@ export class SignupComponent {
       password: ''
     }
   };
-
+ 
   pancardFile: File | null = null;
-  driverLicenseFile: File | null = null;
   imageMsg: string = '';
   show:boolean=true;
   file:File=null;
   pancardImage:string[]=[];
-  driverLicenseImage:string[]=[];
+  showFileUpload: boolean = false;
+  customerId:number 
+ 
 
-  constructor(private customerService:CustomerService){}
+  constructor(private customerService:CustomerService,private router:Router){}
 
-  onAddCustomer(){
-    this.customerService.addCustomer(this.customer).subscribe({
-      next:(data)=>{
-        this.customer=data;
-        this.show=true;
-        console.log(this.customer)
-      },
-      error: (err) => {
-        console.error('Error adding customer:', err);
-      } 
-    });
-  }
-
-  onPanCardChange(event: any) {
-    this.pancardFile = event.target.files[0]; // Use specific variable for PAN card
-  }
-
-  onDriverLicenseChange(event: any) {
-    this.driverLicenseFile = event.target.files[0]; // Use specific variable for Driver License
-  }
-
-
-  onUploadPanCard(){
-
-    if (!this.pancardFile || !this.isImage(this.pancardFile)) {
-      alert('Please select a valid PAN card image file');
-      return;
+  onSignUp(form: NgForm) {
+    if (form.valid) {
+      const observer = {
+        next: (data: any) => {
+          this.customer = data;
+          this.customerId = Number(this.customer.id); 
+          this.show = true;
+          this.showFileUpload = true;
+          console.log('Customer registered successfully:', this.customer);
+          this.router.navigate(['/login']);
+        },
+        error: (err: any) => {
+          console.error('Error adding customer:', err);
+        },
+        complete: () => {
+          console.log('Signup process completed');
+        }
+      };
+      this.customerService.addCustomer(this.customer).subscribe(observer);
+    } else {
+      console.error('Form is not valid');
     }
-
-    let formData = new FormData();
-    formData.set('file',this.file);
-    this.customerService.uploadPan(formData,this.customer.id).subscribe({
-      next:(data)=>{
-        this.pancardImage.push(this.pancardFile.name)
-        this.imageMsg = 'PAN Card ' + this.pancardFile.name + ' is uploaded' ;
-        this.pancardFile = null;
-      },
-      error: (err) => {
-        console.error('Error uploading PAN Card:', err);
-      }
-    });
-  }
-
-  onUploadDriverLicense() {
-
-    if (!this.driverLicenseFile || !this.isImage(this.driverLicenseFile)) {
-      alert('Please select a valid Driver License image file');
-      return;
-    }
-    
-    let formData = new FormData();
-    formData.set('file', this.file);
-    this.customerService.uploadDriverLicense(formData, this.customer.id).subscribe({
-      next: (data) => {
-        this.driverLicenseImage.push(this.driverLicenseFile.name);
-        this.imageMsg = 'Driver License ' + this.driverLicenseFile.name + ' is uploaded';
-        this.driverLicenseFile = null;
-      },
-      error: (err) => {
-        console.error('Error uploading Driver License:', err);
-      }
-    });
-  }
-
-  private isImage(file: File): boolean {
-    const validImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
-    return file && validImageTypes.includes(file.type);
   }
  
 }

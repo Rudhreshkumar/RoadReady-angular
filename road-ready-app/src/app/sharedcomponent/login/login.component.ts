@@ -45,7 +45,7 @@ export class LoginComponent {
                     this.router.navigateByUrl('/addmembership')
                     break;
                   case 'ROLE_CUSTOMER':
-                    this.router.navigateByUrl('/customer/dashboard')
+                    this.router.navigateByUrl('/customer/usedcars')
                     break;
                 }              
             },

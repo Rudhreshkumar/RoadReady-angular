@@ -1,12 +1,10 @@
-<nav class="navbar navbar-expand-lg" style="background-color: greenyellow; padding: 0;">
-
+<nav class="navbar navbar-expand-lg" style="background-color: greenyellow; padding: 0; width: 101%; margin: 0;">
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarContent">
-    <ul class="navbar-nav me-auto">
-  
+    <ul class="navbar-nav mx-auto" style="flex-grow: 1; justify-content: center; padding-right: 0; margin: 0;">
       <!-- Sort By Dropdown -->
       <li class="nav-item dropdown me-3">
         <a class="nav-link dropdown-toggle" href="#" id="navbarSortDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.2rem;">
@@ -19,10 +17,10 @@
       </li>
 
       <!-- Search Form -->
-      <li class="nav-item" style="width: 600px;">
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search cars" aria-label="Search" style="width: 100%;">
-          <button class="btn btn-outline-success" type="submit" style="color: black; border-color: black;">Search</button>
+      <li class="nav-item" style="flex-grow: 1; width: 400px;">
+        <form class="d-flex" style="width: 70%;">
+          <input class="form-control me-2 rounded-pill" type="search" placeholder="Search cars" aria-label="Search" style="flex-grow: 1; border-radius: 25px; border: 1px solid black;">
+          <button class="btn btn-outline-success" type="submit" style="color: black; border-color: black; border-radius: 25px;">Search</button>
         </form>
       </li>
     </ul>
@@ -30,7 +28,7 @@
     <!-- Login/Register Buttons -->
     <div class="d-flex">
       <a href="/login" class="btn btn-outline-dark my-2 my-sm-0" style="margin-right: 10px;">Login</a>
-      <a href="#" class="btn btn-outline-dark my-2 my-sm-0">Register</a>
+      <a href="/signup" class="btn btn-outline-dark my-2 my-sm-0">Register</a>
     </div>
   </div>
 </nav>

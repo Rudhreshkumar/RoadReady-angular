@@ -1,0 +1,79 @@
+.wishlist-card {
+    background-color: #525655; /* Card background color */
+    color: #FFF; /* Text color */
+    border-radius: 20px; /* Rounded corners for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.wishlist-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+.tag {
+    color: greenyellow; /* Tag text color */
+    font-weight: bold; /* Bold text */
+    font-size: 0.9rem; /* Font size */
+    position: absolute; /* Position over the image */
+    top: 30px; /* Vertical position adjustment */
+    left: 10px; /* Horizontal position adjustment */
+    z-index: 2; /* Ensure it's on top of other elements */
+}
+
+.card-img-top {
+    width: 100%; /* Full width for images */
+    height: auto; /* Automatic height */
+    border-radius: 10px; /* Rounded corners for images */
+    object-fit: cover; /* Cover the image area without distortion */
+}
+
+.card-title {
+    font-size: 1.5rem; /* Increased font size for titles */
+}
+
+.card-link {
+    color: #00BFFF; /* Link color */
+    font-weight: bold; /* Bold link text */
+    text-decoration: none; /* No underline */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.card-link:hover {
+    color: #0080FF; /* Darker shade on hover */
+}
+
+.availability-tag {
+    position: absolute; /* Positioning for the tag */
+    top: 10px; /* Vertical position */
+    left: 10px; /* Horizontal position */
+    z-index: 2; /* Ensure it overlays other elements */
+}
+
+.card-body {
+    position: relative; /* Allows for positioning of child elements */
+}
+
+.btn-danger {
+    float: right; /* Float button to the right */
+    display: flex; /* Flex layout for button */
+    margin: 0; /* No margin */
+    justify-content: center; /* Center contents */
+    transition: background-color 0.3s ease; /* Smooth background color change */
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Darker shade on hover */
+}
+.purchase-header {
+    color: #FFD700; /* Gold color for the header */
+    font-size: 2rem; /* Larger font size for emphasis */
+    margin-bottom: 10px; /* Space below the header */
+}
+
+.purchase-description {
+    color: #FFF; /* White color for description */
+    font-size: 1rem; /* Standard font size */
+    margin-bottom: 20px; /* Space below the description */
+}
+

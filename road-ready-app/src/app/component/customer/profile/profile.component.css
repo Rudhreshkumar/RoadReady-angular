@@ -1,0 +1,23 @@
+.sidebar-fixed {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.card {
+    background-color: #f8f9fa; 
+}
+
+.card-body {
+    padding: 2rem; 
+}
+
+.alert {
+    font-weight: bold;
+}
+
+body {
+    background-color: #f0f0f0;
+}

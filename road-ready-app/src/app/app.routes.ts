@@ -16,6 +16,8 @@ import { PurchaseComponent } from './component/customer/usedcars/purchase/purcha
 import { SingleRentalCarComponent } from './component/customer/rentalcars/single-rental-car/single-rental-car.component';
 import { BookingComponent } from './component/customer/rentalcars/booking/booking.component';
 import { SignupComponent } from './component/customer/usedcars/signup/signup.component';
+import { MyactivityComponent } from './component/customer/myactivity/myactivity.component';
+import { ProfileComponent } from './component/customer/profile/profile.component';
 
 
 
@@ -45,7 +47,13 @@ export const routes: Routes = [
         "path":"customer/my-purchase",component:MyPurchaseComponent
     },
     {
+        "path":"customer/my-activity",component:MyactivityComponent
+    },
+    {
         "path":"customer/rental-history",component:RentalHistoryComponent
+    },
+    {
+        "path":"customer/profile",component:ProfileComponent
     },
     {
         "path":"customer/profile-settings",component:ProfileSettingsComponent
@@ -69,6 +77,6 @@ export const routes: Routes = [
         "path":"signup",component:SignupComponent
     },
     {
-        "path":"usedcars/purchase",component:PurchaseComponent
+        "path":"usedcars/purchase/:id",component:PurchaseComponent
     }
 ];

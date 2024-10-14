@@ -1,16 +1,21 @@
-.custom-user-column {
-  display: flex;
-  justify-content: center; /* Center cards horizontally */
-  margin-bottom: 15px; /* Space between rows */
+.custom-car-card {
+  border-radius: 15px; /* Rounded edges */
+  background-color: #343a40; /* Dark background color */
+  color: white; /* White text color */
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
-.card {
-  height: 100%; /* Ensure card takes the full height of the column */
+.custom-car-card:hover {
+  background-color: #495057; /* Lighter dark color on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
 }
 
-.card-img-top {
-  border-top-left-radius: 10px; /* Optional: add rounded corners */
-  border-top-right-radius: 10px; /* Optional: add rounded corners */
+.custom-car-card .card-title {
+  font-size: 1.1em;
+}
+
+.custom-car-card .card-body p {
+  color: #f8f9fa; /* Light text for details */
 }
 
 /* Style for multi-level dropdown */
