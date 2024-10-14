@@ -8,3 +8,163 @@
     border: 1px solid #ccc; /* Optional: add a border */
     border-radius: 5px; /* Optional: add rounded corners */
 }
+
+/* Navbar styles */
+.navbar {
+    transition: background-color 0.3s ease;
+    background-color: hwb(212 8% 48%); /* Dark blue color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.nav-link:hover {
+    color: darkgreen; /* Change text color on hover */
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    transition: opacity 0.3s ease;
+}
+
+.dropdown-item {
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: lightyellow; /* Change background on hover */
+}
+
+/* Search input and button styles */
+input.form-control {
+    transition: box-shadow 0.3s ease;
+}
+
+input.form-control:hover {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Add glow effect on hover */
+}
+
+.btn {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: darkgreen; /* Change background on hover */
+    border-color: green; /* Change border color on hover */
+    color: white; /* Change text color on hover */
+}
+
+/* Table row styles */
+.table-striped tbody tr:hover {
+    background-color: rgba(0, 255, 0, 0.1); /* Change background color on row hover */
+}
+
+/* Card hover effect */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+/* Modal styles */
+.modal-content {
+    transition: transform 0.3s ease;
+}
+
+.modal-content:hover {
+    transform: scale(1.02); /* Slightly enlarge modal on hover */
+}
+
+/* Custom divider styles */
+.my-custom-divider {
+    border-top: 2px solid green; /* Custom divider color */
+}
+/* Navbar styling */
+
+
+.navbar-brand {
+    color: greenyellow; /* Set Road Ready to greenyellow */
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Navbar links */
+.nav-link {
+    color: white !important; /* Default link color */
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: greenyellow !important; /* Change link color to greenyellow on hover */
+    text-decoration: underline;
+}
+
+.nav-item.active .nav-link,
+.nav-item .active {
+    font-weight: 700;
+    color: #a8ff35 !important; /* Active link color */
+}
+
+/* Dropdown styling */
+.dropdown-menu {
+    background-color: #fff; /* White background for dropdown */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    color: #333; /* Default dropdown item color */
+    font-size: 1rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #57d900; /* Green background on hover */
+    color: white; /* White text on hover */
+}
+
+.dropdown-divider {
+    border-color: #ddd; /* Divider color */
+}
+
+/* Login Button */
+.btn-outline-dark {
+    color: white; /* Default button text color */
+    border-color: white; /* Button border color */
+    margin-left: 10px;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+    background-color: greenyellow; /* Use the same hover color as the navbar */
+    color: black; /* Black text on hover */
+    border-color: greenyellow; /* Change border color on hover */
+}
+
+/* Additional styles for Proceed to Buy button */
+.btn-success {
+    background-color: #57d900; /* Green background */
+    color: white; /* White text */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #45c600; /* Darker green on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
