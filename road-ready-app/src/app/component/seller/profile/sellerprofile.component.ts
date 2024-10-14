@@ -12,7 +12,7 @@ import { SellersidebarComponent } from "../sellersidebar/sellersidebar.component
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
-export class ProfileComponent implements OnInit {
+export class SellerProfileComponent implements OnInit {
   seller: any = {};
   errorMessage: string | null = null;
 
