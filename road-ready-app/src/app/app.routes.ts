@@ -17,7 +17,7 @@ import { SingleRentalCarComponent } from './component/customer/rentalcars/single
 import { BookingComponent } from './component/customer/rentalcars/booking/booking.component';
 import { SignupComponent } from './component/customer/usedcars/signup/signup.component';
 import { MyactivityComponent } from './component/customer/myactivity/myactivity.component';
-
+import { ProfileComponent } from './component/customer/profile/profile.component';
 
 import { UsedcarComponent } from './component/seller/usedcar/usedcar.component';
 import { OnboardComponent } from './component/usedcaradd/onboard/onboard.component';
@@ -29,10 +29,9 @@ import { UsedcardetailsComponent } from './component/usedcaradd/usedcardetails/u
 import { MembershipComponent } from './component/seller/membership/membership.component';
 import { EditcardetailsComponent } from './component/seller/editcardetails/editcardetails.component';
 import { SellersignupComponent } from './component/seller/sellersignup/sellersignup.component';
-import { SellerProfileComponent } from './component/seller/profile/sellerprofile.component';
+
 import { EditprofileComponent } from './component/seller/profile/editprofile/editprofile.component';
 import { FinalpriceComponent } from './component/seller/finalprice/finalprice.component';
-import { ProfileComponent } from './component/customer/profile/profile.component';
 
 export const routes: Routes = [
 
@@ -52,7 +51,7 @@ export const routes: Routes = [
       "path":"seller/signup",component:SellersignupComponent
     },
     {
-      "path":"seller/profile",component:SellerProfileComponent
+      "path":"seller/profile",component:ProfileComponent
     },
     {
       "path":"edit/seller/profile",component:EditprofileComponent

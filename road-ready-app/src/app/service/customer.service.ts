@@ -5,8 +5,6 @@ import { UsedCar } from "../../model/usedCar.model";
 import { Customer } from "../../model/customer.model";
 import { CarImageModel } from "../../model/carImage.model";
 
-
-
 @Injectable({
     providedIn: 'root'
   })
@@ -18,11 +16,10 @@ import { CarImageModel } from "../../model/carImage.model";
         return this.http.get<any>('http://localhost:8083/Usedcars/all')
       }
     
-    getUsedCarsById(id:number):Observable<any>{
-      return this.http.get('http://localhost:8083/Usedcars/getUsedCars/' + id,     
-      )
+      getUsedCarsById(id: number): Observable<any> {
+        return this.http.get<any>(`http://localhost:8083/Usedcars/${id}`);
     }
-
+    
     addToWishlist(usedCarId:number):Observable<any>{
       return this.http.post('http://localhost:8083/customer/wishlist/add', {
         id: usedCarId  // Ensure you send the correct structure

@@ -51,11 +51,11 @@ export class ViewMoreDetailsComponent implements OnInit{
     getCarDetails(carId:number):void{
     this.customerService.getUsedCarsById(carId).subscribe({
       next:(res)=>{
-        this.usedCar = res; // Store the fetched used car details
+        this.usedCar = res;
         console.log(this.usedCar);
       },
       error: (err) => {
-        console.error('Error fetching used car details:', err); // Handle any error
+        console.error('Error fetching used car details:', err); 
       }
     })
   }
@@ -66,7 +66,7 @@ export class ViewMoreDetailsComponent implements OnInit{
         this.usedCarsWithImages = images && images.length > 0
           ? images.map(img => ({ id: img.id, imagePath: 'Images/' + img.path.split('\\').pop() })) // Assign image paths
           : [{ id: 0, imagePath: this.defaultFallbackImage }]; // Fallback image if no images are found
-      },
+      console.log("img func called")},
       error: (err) => {
         console.error(`Error fetching images for car ID ${usedCarId}:`, err);
         this.usedCarsWithImages = [{ id: 0, imagePath: this.defaultFallbackImage }]; // Fallback image in case of error

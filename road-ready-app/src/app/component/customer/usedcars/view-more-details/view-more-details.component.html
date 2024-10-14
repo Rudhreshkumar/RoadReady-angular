@@ -89,11 +89,11 @@
                         <tbody>
                             <tr>
                                 <td class="text-center">Model</td>
-                                <td class="text-center"><strong>{{ usedCar?.model?.modelname }}</strong></td>
+                                <td class="text-center"><strong>{{ usedCar?.model}}</strong></td>
                             </tr>
                             <tr>
                                 <td class="text-center">Brand</td>
-                                <td class="text-center"><strong>{{ usedCar.model.brand.brandname }}</strong></td>
+                                <td class="text-center"><strong>{{ usedCar?.brand }}</strong></td>
                             </tr>
                             <tr>
                                 <td class="text-center">Seating Capacity</td>
@@ -137,7 +137,7 @@
         <div class="col-lg-5 col-md-5" style="padding-left: 15px;">
             <div class="card w-100">
                 <div class="card-body">
-                    <h1 class="card-title">{{ usedCar.model.brand.brandname }} {{ usedCar.model.modelname }}</h1>
+                    <h1 class="card-title">{{ usedCar?.brand}} {{ usedCar?.model }}</h1>
                     <div *ngIf="usedCar">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
