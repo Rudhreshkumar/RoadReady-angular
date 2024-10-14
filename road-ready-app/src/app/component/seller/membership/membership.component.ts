@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SellersidebarComponent } from "../sellersidebar/sellersidebar.component";
 import { UserService } from '../../../service/user.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SellerService } from '../../../service/seller.service';
 import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
@@ -16,35 +16,33 @@ import { TitlenavabarComponent } from "../titlenavabar/titlenavabar.component";
   templateUrl: './membership.component.html',
   styleUrl: './membership.component.css'
 })
-export class MembershipComponent {
+export class MembershipComponent implements OnInit{
   membershipType: string='';
   successMsg: string;
   errorMsg: any;
-  constructor(private sellerservice:SellerService,private router:Router){
+  carId: number;
+  constructor(private sellerservice:SellerService,private router:Router,private route: ActivatedRoute){
    
   }
-  onClick(){
-   
+ 
+  ngOnInit(): void {
+    this.carId = +this.route.snapshot.paramMap.get('id'); 
+  }
+  onClick() {
     this.sellerservice.postMembershipType({
-      
-      "membershipType":this.membershipType,
-      
+      "membershipType": this.membershipType,
     }).subscribe({
-      next:(data)=>{
-        this.successMsg='Membership added';
-        this.errorMsg=undefined;
-        this.router.navigate(['/usedcar/add'])
+      next: (data) => {
+        this.successMsg = 'Membership added';
+        this.errorMsg = undefined;
+
+        this.router.navigate(['/seller/dashboard']); 
       },
-      error:(err)=>{
+      error: (err) => {
         this.successMsg = undefined;
-        console.log(err)
+        console.log(err);
       }
-    })
+    });
   }
-  resetmsg(){
-    this.successMsg = undefined;
-    this.errorMsg=undefined;
-  }
-  
 
 }

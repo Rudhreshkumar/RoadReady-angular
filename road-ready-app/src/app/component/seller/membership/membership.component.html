@@ -1,28 +1,42 @@
 <app-titlenavabar></app-titlenavabar>
 
-<!-- Main Container -->
 <div class="container-fluid">
     <div class="row flex-nowrap">
-
-        <!-- Content Area -->
-        <div class="col py-3" style="margin-top: 100px;">
-
-            <!-- Membership Content and Form -->
+        <div class="col py-3" style="margin-top: 50 px;">
             <div class="row">
-
-                <!-- Column 1: Membership Information -->
-                <div class="col-md-6 text-light" style="background-color: yellowgreen; padding: 30px; border-radius: 10px; color: black;">
-                    <h2 class="mb-4">Why Choose a Membership?</h2>
-                    <p>At <strong>Road Ready</strong>, we offer three exclusive membership options designed to enhance your car buying, selling, and rental experience. By joining our membership program, you can unlock various benefits tailored to meet your specific needs.</p>
-                    <ul class="list-unstyled mt-3">
-                        <li><i class="fas fa-star"></i> <strong>Premium Membership</strong> – Enjoy top-tier benefits like priority customer support, exclusive deals, and access to early listings of cars.</li>
-                        <li class="mt-2"><i class="fas fa-star"></i> <strong>Gold Membership</strong> – Ideal for regular users who want a balance between cost and privileges, including special offers and discounts on rentals.</li>
-                        <li class="mt-2"><i class="fas fa-star"></i> <strong>Silver Membership</strong> – Our entry-level membership that offers value for money and access to standard features of the platform.</li>
+                <!-- Membership Benefits Section -->
+                <div class="col-md-6" style="background-color: white; padding: 30px; border-radius: 10px; color:yellowgreen;">
+                    <h2 class="mb-4" style="color: black;">Why Choose a Membership?</h2>
+                    <p style="color: black;">At <strong>Road Ready</strong>, we offer three exclusive membership options designed to enhance your car buying, selling, and rental experience. Unlock various benefits tailored to meet your specific needs.</p>
+                    <ul class="list-unstyled mt-3" style="color:yellowgreen;">
+                        <li><i class="fas fa-star"></i> <strong>Premium Membership:</strong>
+                            <ul>
+                                <li style="color: black;">Your car will be showcased at the top of search results.</li>
+                                <li style="color: black;">Set a higher price and attract serious buyers.</li>
+                                <li style="color: black;">Distinctive badge to make your car stand out.</li>
+                            </ul>
+                        </li>
+                        <li class="mt-2"><i class="fas fa-star"></i> <strong>Gold Membership:</strong>
+                            <ul>
+                                <li style="color: black;">Priority listing above standard members.</li>
+                                <li style="color: black;">Set a higher price range for your car.</li>
+                                <li style="color: black;">Enhanced features to showcase your car's best aspects.</li>
+                            </ul>
+                        </li>
+                        <li class="mt-2"><i class="fas fa-star"></i> <strong>Silver Membership:</strong>
+                            <ul>
+                                <li style="color: black;">Your car listed in our database for visibility.</li>
+                                <li style="color: black;">Standard price range to attract interested buyers.</li>
+                                <li style="color: black;">Limited features for showcasing key attributes.</li>
+                            </ul>
+                        </li>
                     </ul>
-                    <p class="mt-4">Choose the membership that suits your needs and start enjoying the benefits today!</p>
+                    <p class="mt-4" style="color: black;">Choose the membership that suits your needs and start enjoying the benefits today!</p>
                 </div>
+            
+            
 
-                <!-- Column 2: Membership Form -->
+                <!-- Membership Selection Section -->
                 <div class="col-md-6">
                     <div class="container mt-4">
                         <div class="row justify-content-center">
@@ -32,7 +46,6 @@
                                         Select Your Preferred Membership Plan
                                     </div>
                                     <div class="card-body p-4">
-                                        <!-- Success and Error Messages -->
                                         <div class="alert alert-success" role="alert" *ngIf="successMsg">
                                             {{ successMsg }}
                                         </div>
@@ -40,10 +53,7 @@
                                             {{ errorMsg }}
                                         </div>
 
-                                        <!-- Membership Form -->
                                         <form>
-
-                                            <!-- Membership Type Selection -->
                                             <div class="mb-3 form-check text-center">
                                                 <input class="form-check-input" type="radio" name="membershipType" id="PREMIUM" [(ngModel)]="membershipType" value="PREMIUM" required>
                                                 <label class="form-check-label" for="PREMIUM">Premium</label>
@@ -57,13 +67,11 @@
                                                 <label class="form-check-label" for="SILVER">Silver</label>
                                             </div>
 
-                                            <!-- Subscribe Button -->
                                             <div class="text-center mt-4">
                                                 <button class="btn btn-success btn-lg w-100" (click)="onClick()" [disabled]="!membershipType" style="background-color: yellowgreen; border-color: #27ae60;">
                                                     Subscribe Now
                                                 </button>
                                             </div>
-
                                         </form>
                                     </div>
                                 </div>

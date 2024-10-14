@@ -1,13 +1,13 @@
-<!-- Sidebar -->
 <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark text-white">
     <div class="d-flex flex-column flex-shrink-0 p-3" style="height: 100vh;">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-        <span class="fs-4" style="white-space: nowrap;">Seller Dashboard</span>
+      <a  class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <span class="fs-4" style="white-space: nowrap; " routerLink="/seller/dashboard">Seller Dashboard</span>
       </a>
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item"><a href="/profile" class="nav-link text-white">Profile</a></li>
-        <li class="nav-item"><a href="/membership" class="nav-link text-white" style="white-space: nowrap;">Membership Status</a></li>
+        <li class="nav-item"><a routerLink="/seller/profile" class="nav-link text-white">Profile</a></li>
+        <li class="nav-item"><a routerLink="/usedcar/add" class="nav-link text-white">List Car</a></li>
+        <li class="nav-item"><a href="/seller/dashboard" class="nav-link text-white" style="white-space: nowrap;">View Listed Cars</a></li>
         <li class="nav-item"><a href="/account-settings" class="nav-link text-white">Account Settings</a></li>
        
       </ul>
@@ -15,13 +15,13 @@
       <div class="dropdown">
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="https://via.placeholder.com/32" alt="Seller Avatar" width="32" height="32" class="rounded-circle me-2">
-          <strong>{{ username }}</strong>
+          <strong>{{username }}</strong>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-          <li><a class="dropdown-item" href="/profile" style="white-space: nowrap;">View Profile</a></li>
-          <li><a class="dropdown-item" href="/settings">Settings</a></li>
+          <li><a class="dropdown-item" routerLink="/seller/profile" style="white-space: nowrap;">View Profile</a></li>
+          
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+          <li><a class="dropdown-item" href="">Sign out</a></li>
         </ul>
       </div>
     </div>

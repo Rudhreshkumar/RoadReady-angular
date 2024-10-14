@@ -1,32 +1,74 @@
+
 <div class="container-fluid">
+ 
   <div class="row">
-    <!-- Sidebar -->
     <div class="col-md-3 col-xl-2 px-sm-2 px-0 bg-dark text-white sidebar-fixed">
       <app-sellersidebar></app-sellersidebar>
     </div>
 
-    <div class="col-12" *ngFor="let car of usedCars">
-      <div class="card mb-3" style="max-width: 500px;"> <!-- Add a fixed width to the card -->
-        <div class="card-body d-flex">
-          <img src="public/images/car2.jpg" class="img-fluid rounded-start me-3" alt="Car Image" style="max-width: 150px; height: auto;"> <!-- Reduce the image width -->
-          <div>
-            <h5 class="card-title">Car Details</h5>
-            <h6>Brand: <span class="text-muted">{{ car.model.brandname }}</span></h6>
-            <h6>Model: <span class="text-muted">{{ car.model.modelname }}</span></h6>
-            <h6>Price: <span class="text-muted">₹{{ car.price }}</span></h6>
-            <h6>Location: <span class="text-muted">{{ car.location }}</span></h6>
-            <h6>Seating Capacity: <span class="text-muted">{{ car.seatingCapacity }}</span></h6>
-            <h6>Mileage: <span class="text-muted">{{ car.mileage }} km</span></h6>
-            <h6>Color: <span class="text-muted">{{ car.color }}</span></h6>
-            <h6>Description: <span class="text-muted">{{ car.description }}</span></h6>
-            <h6>Year: <span class="text-muted">{{ car.year }}</span></h6>
-            <h6>Engine Number: <span class="text-muted">{{ car.engineNum }}</span></h6>
-            <h6>Registration Number: <span class="text-muted">{{ car.registrationNum }}</span></h6>
-            <h6>Ownership: <span class="text-muted">{{ car.ownership }}</span></h6>
-            <h6>Transmission Type: <span class="text-muted">{{ car.transmissionType }}</span></h6>
-            <h6>Fuel Type: <span class="text-muted">{{ car.fuelType }}</span></h6>
-            <h6>Status: <span class="text-muted">AVAILABLE</span></h6> <!-- Set initial verification status to Pending -->
-            <button class="btn btn-primary mt-3" routerLink="/bookinspectionpage">Book Inspection</button>
+    <div class="col-12">
+      <div *ngIf="usedCars.length === 0" class="d-flex justify-content-center" style="height: 250px;">
+        <div class="card text-center" style="width: 18rem; margin-top: 20px;">
+          <div class="card-body">
+            <h5 class="card-title">🚗 No Cars Listed Yet!</h5> <!-- Emoji and Title updated -->
+            <p class="card-text">Looks like you haven’t listed any cars for sale yet. Time to put those wheels on the market! 🏎️</p> <!-- Updated text -->
+            <button class="btn btn-primary" routerLink="/usedcar/add">List Your Car</button> <!-- Button text updated -->
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="row flex-nowrap">
+       
+        <div class="col-md-6 card-container" *ngFor="let car of usedCars"> 
+          <div class="card mb-3" style="max-width: 500px;">
+            <div class="card-body d-flex">
+              <div class="col-md-8">
+                <img
+                [src]="car.imagePath"
+                class="card-img-top"
+                alt="Car image"
+                style="height: 180px; width: 100%; padding-top: 10px; object-fit: cover;"
+              />                <h5 class="card-title">
+                  {{ car.model.brand.brandname }} {{ car.model.modelname }}
+                  <span *ngIf="car.verificationStatus === 'PENDING'" style="color: #FFA07A;">(Verification Pending)</span>
+                  <span *ngIf="car.verificationStatus === 'VERIFIED'" style="color: #33CC33;">(Verified)</span>
+                </h5>
+                <ul class="list-unstyled">
+                  <li><strong>service Charges:</strong> ₹{{ car.price }}</li>
+                  <li><strong>Location:</strong> {{ car.location }}</li>
+                  <li><strong>Seating Capacity:</strong> {{ car.seatingCapacity }}</li>
+                  <li><strong>Mileage:</strong> {{ car.mileage }} km</li>
+                  <li><strong>Color:</strong> {{ car.color }}</li>
+                  <li><strong>Description:</strong> {{ car.description }}</li>
+                  <li><strong>Year:</strong> {{ car.year }}</li>
+                  <li><strong>Engine Number:</strong> {{ car.engineNum }}</li>
+                  <li><strong>Registration Number:</strong> {{ car.registrationNum }}</li>
+                  <li><strong>Ownership:</strong> {{ car.ownership }}</li>
+                  <li><strong>Transmission Type:</strong> {{ car.transmissionType }}</li>
+                  <li><strong>Fuel Type:</strong> {{ car.fuelType }}</li>
+                  <li><strong>Status:</strong> AVAILABLE</li>
+                  <li><strong>Final Price:</strong> {{ car.finalprice }}</li>
+                </ul>
+              </div>
+              
+              <div class="col-md-4 d-flex flex-column justify-content-center">
+                <button class="btn btn-primary mb-2" (click)="bookInspection(car.id)" [disabled]="isBookingDisabled">Book Inspection</button>
+                <button class="btn btn-primary mb-2" routerLink="/editcardetails" (click)="onEdit(car.id)">Edit Details</button>
+                <!-- <button class="btn btn-danger" (click)="deletecar(car.id)">Delete</button> -->
+                 
+                <!-- <button (click)="onCheckPrice(car.id)">Check Price</button> -->
+                <button [disabled]="!bookInspection" [routerLink]="['/finalprice', car.id]">Check Price</button>
+                <!-- <button [routerLink]="['/addmembership', car.id]">Check Price</button> -->
+
+                <!-- <button [disabled]="!bookInspection">
+                  Check Price
+                </button> -->
+       
+
+               
+              </div>
+            </div>
           </div>
         </div>
       </div>

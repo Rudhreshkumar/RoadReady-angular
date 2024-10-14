@@ -17,12 +17,12 @@
 }
 
 .price-card {
-    flex: 2; /* Takes up two-thirds of the page */
-    margin-right: 20px; /* Space between the two cards */
+    flex: 2; 
+    margin-right: 20px; 
 }
 
 .next-step-card {
-    flex: 1; /* Takes up one-third of the page */
+    flex: 1; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;

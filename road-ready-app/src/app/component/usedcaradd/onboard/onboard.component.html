@@ -1,4 +1,3 @@
-<!-- onboard.component.html -->
 <app-titlenavabar></app-titlenavabar>
 <br>
 <div class="container-fluid">
@@ -6,7 +5,9 @@
         <div class="col-lg-7 d-flex justify-content-center align-items-center">
             <div class="card w-100">
                 <div class="card-body">
+                    
                     <div class="card flex justify-content-center">
+                        <h3 class="text-center" style="color: yellowgreen;">Enter Car Details</h3>
                         <p-stepper>
                             <p-stepperPanel header="Brand">
                                 <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
@@ -48,20 +49,22 @@
                                 <ng-template pTemplate="content" let-prevCallback="prevCallback" let-index="index">
                                     <div class="flex flex-column h-12rem">
                                         <div class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
-                                            <app-usedcardetails [modelId]="modelId"></app-usedcardetails> <!-- Pass modelId -->
+                                            <app-usedcardetails [modelId]="modelId"></app-usedcardetails> 
                                         </div>
                                     </div>
                                     <div class="flex pt-4 justify-content-between">
                                         <p-button 
-                                            label="Back" 
-                                            icon="pi pi-arrow-left" 
-                                            (onClick)="prevCallback.emit()" />
-                                        <p-button href="/seller/dashboard"
+                                          label="Back" 
+                                          icon="pi pi-arrow-left" 
+                                          (onClick)="prevCallback.emit()" />
+                                        <a [routerLink]="['/seller/dashboard']">
+                                          <p-button 
                                             label="What's Next?" 
                                             icon="pi pi-question-circle" 
                                             class="p-button-help" />
-                                    </div>
-                                    
+                                        </a>
+                                      </div>
+                                   
                                     
                                 </ng-template>
                             </p-stepperPanel>

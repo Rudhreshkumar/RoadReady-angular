@@ -11,3 +11,6 @@
   .card-body {
     background-color: yellowgreen; /* Set background color to green */
   }
+  .text-right {
+    text-align: right;
+  }

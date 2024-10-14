@@ -12,71 +12,18 @@ import { NgFor, NgIf } from '@angular/common';
   templateUrl: './usedcardetails.component.html',
   styleUrls: ['./usedcardetails.component.css']
 })
-/*export class UsedcardetailsComponent {
-  usedCarForm: FormGroup;
-  successMsg: string;
-  errorMsg: string;
 
-  @Input() modelId: number; // Expecting modelId as input
-
-  constructor(
-    private fb: FormBuilder,
-    private sellerService: SellerService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
-  ) {
-    this.usedCarForm = this.fb.group({
-      engineNum: ['', Validators.required],
-      registrationNum: ['', Validators.required],
-      price: ['', [Validators.required, Validators.min(0)]],
-      location: ['', Validators.required],
-      mileage: ['', [Validators.required, Validators.min(0)]],
-      year: ['', [Validators.required, Validators.min(1900), Validators.max(new Date().getFullYear())]], // Year validation
-      color: ['', Validators.required],
-      seatingCapacity: ['', [Validators.required, Validators.min(1)]],
-      fuelType: ['', Validators.required],
-      transmissionType: ['', Validators.required],
-      description: ['', Validators.required]
-    });
-  }
-
-  onClick() {
-    if (this.usedCarForm.valid) {
-      const requestData = this.usedCarForm.value;
-
-      this.sellerService.postUsedcar(this.modelId, requestData).subscribe({
-        next: (data) => {
-          this.successMsg = 'Used car added successfully';
-          this.errorMsg = undefined;
-          // Emit the car ID on success
-        },
-        error: (err) => {
-          this.successMsg = undefined;
-          console.error(err);
-          this.errorMsg = 'Failed to add used car';
-        }
-      });
-    } else {
-      this.errorMsg = 'Please fill out all required fields.';
-    }
-  }
-
-  resetMsg() {
-    this.successMsg = undefined;
-    this.errorMsg = undefined;
-  }
-}*/
 export class UsedcardetailsComponent {
   usedCarForm: FormGroup;
   successMsg: string;
   errorMsg: string;
-  showImageUpload: boolean = false; // To toggle image upload section
-  carId: number; // Store car ID after adding
-  file: File = null; // File to be uploaded
+  showImageUpload: boolean = false;
+  carId: number; 
+  file: File = null; 
   imageMsg: string = '';
-  uploadedImages: string[] = []; // Store uploaded image names
+  uploadedImages: string[] = [];
 
-  @Input() modelId: number; // Expecting modelId as input
+  @Input() modelId: number; 
 
   constructor(
     private fb: FormBuilder,
@@ -101,15 +48,15 @@ export class UsedcardetailsComponent {
   }
 
   onClick() {
-    if (this.usedCarForm.valid) {
+    if (!this.carId && this.usedCarForm.valid) {
       const requestData = this.usedCarForm.value;
 
       this.sellerService.postUsedcar(this.modelId, requestData).subscribe({
         next: (data) => {
-          this.carId = data.id; // Assuming the response contains the car ID
+          this.carId = data.id; 
           this.successMsg = 'Used car added successfully';
           this.errorMsg = undefined;
-          this.showImageUpload = true; // Show image upload section after car is added
+          this.showImageUpload = true; 
         },
         error: (err) => {
           this.successMsg = undefined;
@@ -117,32 +64,34 @@ export class UsedcardetailsComponent {
           console.error(err);
         }
       });
+    } else if (this.carId) {
+      this.errorMsg = 'Car already added. You can upload the image now.';
     } else {
       this.errorMsg = 'Please fill out all required fields.';
     }
   }
 
   onFileChange(event: any) {
-    this.file = event.target.files[0]; // Get the selected file
+    this.file = event.target.files[0]; 
   }
 
   onUpload() {
     if (this.file && this.carId) {
       const formData = new FormData();
       formData.append('file', this.file);
-
-      // Call the service to upload the image
       this.sellerService.uploadCarImage(this.carId, formData).subscribe({
         next: (data) => {
-          this.uploadedImages.push(this.file.name); // Add file name to the list of uploaded images
+          this.uploadedImages.push(this.file.name); 
           this.imageMsg = `Image ${this.file.name} uploaded successfully.`;
-          this.file = null; // Reset file input after upload
+          this.file = null;
         },
         error: (err) => {
           console.error(err);
           this.imageMsg = `Failed to upload image ${this.file.name}.`;
         }
       });
+    } else if (!this.carId) {
+      this.imageMsg = 'Please add the car before uploading images.';
     }
   }
 }

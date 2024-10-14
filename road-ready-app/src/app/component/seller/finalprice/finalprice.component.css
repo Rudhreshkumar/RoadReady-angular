@@ -1,0 +1,149 @@
+.sidebar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .content-container {
+    padding: 20px;
+  /* //  background-color: #f7f7f7; */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calculation-overview-container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calculation-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-height: 300px; /* adjust the height as needed */
+    overflow-y: auto;
+  }
+  
+  .calculation-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .calculation-steps li {
+    margin-bottom: 10px;
+  }
+  
+  .calculation-steps strong {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .car-details-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-height: 300px; /* adjust the height as needed */
+    overflow-y: auto;
+  }
+  
+  .details {
+    margin-bottom: 20px;
+  }
+  
+  .details p {
+    margin-bottom: 10px;
+  }
+  
+  .details strong {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .error-message {
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .error-message p {
+    color: red;
+    font-weight: bold;
+  }
+  /* Color scheme: Black and Yellow-Green */
+body {
+    color: #333; /* Black */
+  }
+  
+  .title {
+    color: #000000; /* Yellow-Green */
+  }
+  
+  .details strong {
+    color: #8BC34A; /* Yellow-Green */
+  }
+  
+  .calculation-steps strong {
+    color: #8BC34A; /* Yellow-Green */
+  }
+  
+  .error-message {
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    color: #8BC34A; /* Yellow-Green */
+  }
+  
+  .error-message p {
+    color: #8BC34A; /* Yellow-Green */
+  }
+  /* Center the cards horizontally */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .car-details-container, .calculation-overview-container {
+    margin: 20px auto; /* add some margin to separate the cards */
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-dialog {
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  

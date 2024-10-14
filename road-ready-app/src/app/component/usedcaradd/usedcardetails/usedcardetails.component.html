@@ -1,104 +1,3 @@
-
-<!--<div class="container mt-3">
- 
-  <form [formGroup]="usedCarForm" (ngSubmit)="showDialog()">
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <label for="engineNum" class="form-label" [(ngModel)]="engineNum">Engine Number:</label>
-        <input id="engineNum" formControlName="engineNum" class="form-control" required />
-      </div>
-
-      <div class="col-md-6 mb-3">
-        <label for="registrationNum" class="form-label" [(ngModel)]="registrationNum">Registration Number:</label>
-        <input id="registrationNum" formControlName="registrationNum" class="form-control" required />
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <label for="price" class="form-label" [(ngModel)]="price">Price:</label>
-        <input id="price" formControlName="price" type="number" class="form-control" required />
-      </div>
-
-      <div class="col-md-6 mb-3">
-        <label for="location" class="form-label" [(ngModel)]="location">Location:</label>
-        <input id="location" formControlName="location" class="form-control" required />
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <label for="mileage" class="form-label" [(ngModel)]="mileage">Mileage:</label>
-        <input id="mileage" formControlName="mileage" type="number" class="form-control" required />
-      </div>
-
-      <div class="col-md-6 mb-3">
-        <label for="year" class="form-label" [(ngModel)]="year" >Year:</label>
-        <input id="year" formControlName="year" type="number" class="form-control" required />
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <label for="color" class="form-label" [(ngModel)]="color">Color:</label>
-        <input id="color" formControlName="color" class="form-control" required />
-      </div>
-
-      <div class="col-md-6 mb-3">
-        <label for="seatingCapacity" class="form-label" [(ngModel)]="seatingCapacity">Seating Capacity:</label>
-        <input id="seatingCapacity" formControlName="seatingCapacity" type="number" class="form-control" required />
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <label for="fuelType" class="form-label" [(ngModel)]="usedcardetails.fuelType">Fuel Type:</label>
-        <select id="fuelType" formControlName="fuelType" class="form-select" required>
-          <option value="" disabled selected>Select Fuel Type</option>
-          <option value="PETROL">Petrol</option>
-          <option value="DIESEL">Diesel</option>
-        </select>
-      </div>
-
-      <div class="col-md-6 mb-3">
-        <label for="transmissionType" class="form-label" [(ngModel)]="usedcardetails.transmissionType">Transmission Type:</label>
-        <select id="transmissionType" formControlName="transmissionType" class="form-select" required>
-          <option value="" disabled selected>Select Transmission Type</option>
-          <option value="AUTOMATIC">Automatic</option>
-          <option value="MANUAL">Manual</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="mb-3">
-      <label for="description" class="form-label" [(ngModel)]="description">Description:</label>
-      <textarea id="description" formControlName="description" class="form-control" rows="3" required></textarea>
-    </div>
-
-    
-    <div class="text-center">
-      <button type="submit" class="btn btn-primary" (click)="showDialog()">Add Car</button>
-      <div class="modal" *ngIf="visible" (click)="closeDialog()">
-          <div class="modal-content" (click)="$event.stopPropagation()">
-              <div class="modal-header">Choose an Action</div>
-              <span class="text-secondary block mb-5">Please select one of the options below.</span>
-              <div class="flex justify-content-center gap-4 mb-5">
-                  <button class="btn btn-primary" (click)="onSelling()">Selling</button>
-                  <button class="btn btn-primary" (click)="onCheckingPrice()">Checking Price</button>
-              </div>
-              <div class="flex justify-content-end gap-2">
-                  <button class="btn btn-secondary" (click)="closeDialog()">Cancel</button>
-              </div>
-          </div>
-      </div>
-  </div>
-  
-  
-  
-  </form>
-</div>-->
-
-
 <div class="container mt-3">
   <form [formGroup]="usedCarForm" (ngSubmit)="onClick()">
     <div class="row">
@@ -118,7 +17,7 @@
 
     <div class="row">
       <div class="col-md-6 mb-3">
-        <label for="price" class="form-label">Price:</label>
+        <label for="price" class="form-label">Service Charge:</label>
         <input id="price" formControlName="price" type="number" class="form-control" required />
       </div>
 
@@ -185,11 +84,9 @@
     </div>
 
     <div class="text-center">
-      <button type="submit" class="btn btn-primary">Add Car</button>
+      <button type="submit" class="btn" style="background-color: yellowgreen;">Add Car</button>
     </div>
-    <div class="text-left">
-      <button type="submit" class="btn btn-primary">What's next?</button>
-    </div>
+    
 
     <div class="mt-4" *ngIf="showImageUpload">
       <hr>
@@ -199,7 +96,6 @@
       <input type="file" (change)="onFileChange($event)">
       <button (click)="onUpload()" class="btn btn-secondary mt-2">Upload Image</button>
   
-      <!-- Display uploaded images -->
       <ul *ngIf="uploadedImages?.length > 0">
         <div class="alert alert-warning">
           <h4>Uploaded Images: </h4>
@@ -208,6 +104,7 @@
           </div>
         </div>
       </ul>
+     
     </div>
   </form>
 </div>

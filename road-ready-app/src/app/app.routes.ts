@@ -25,6 +25,11 @@ import { SelectlocationComponent } from './component/seller/selectlocation/selec
 import { CheckingpriceComponent } from './component/seller/checkingprice/checkingprice.component';
 import { UsedcardetailsComponent } from './component/usedcaradd/usedcardetails/usedcardetails.component';
 import { MembershipComponent } from './component/seller/membership/membership.component';
+import { EditcardetailsComponent } from './component/seller/editcardetails/editcardetails.component';
+import { SellersignupComponent } from './component/seller/sellersignup/sellersignup.component';
+import { ProfileComponent } from './component/seller/profile/profile.component';
+import { EditprofileComponent } from './component/seller/profile/editprofile/editprofile.component';
+import { FinalpriceComponent } from './component/seller/finalprice/finalprice.component';
 
 export const routes: Routes = [
 
@@ -41,7 +46,19 @@ export const routes: Routes = [
         "path":"login",component: LoginComponent
     },
     {
+      "path":"seller/signup",component:SellersignupComponent
+    },
+    {
+      "path":"seller/profile",component:ProfileComponent
+    },
+    {
+      "path":"edit/seller/profile",component:EditprofileComponent
+    },
+    {
         "path":"seller/dashboard",component:SellerdashboardComponent
+    },
+    {
+        "path": 'finalprice/:id', component: FinalpriceComponent
     },
     {
         "path":"usedcar/add",component:OnboardComponent
@@ -53,7 +70,10 @@ export const routes: Routes = [
         "path":'bookinspectionpage',component:BookinspectionComponent
     },
     {
-        "path":"selectlocation",component:SelectlocationComponent
+      "path":'editcardetails/:id',component:EditcardetailsComponent
+    },
+    {
+        "path":"selectlocation/:usedCarId",component:SelectlocationComponent
     },
     {
         "path":"addmembership",component:MembershipComponent

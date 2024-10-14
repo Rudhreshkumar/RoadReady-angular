@@ -11,4 +11,22 @@
   .container-fluid {
     margin-left: 250px; /* Push the main content to the right */
   }
+  .no-cars-added {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 40px auto;
+  }
   
+  .no-cars-added img {
+    margin: 10px auto;
+    border-radius: 50%;
+  }
+  .card-container {
+    margin: 10px;
+  }
+  .row.flex-nowrap {
+    overflow-x: auto;
+  }

@@ -1,5 +1,5 @@
 .navbar {
-  background: linear-gradient(to right, #57d900, #a8ff35, #57d900);
+  background: linear-gradient(to right, yellowgreen,yellowgreen,yellowgreen);
 }
 
 .navbar-brand {
@@ -23,7 +23,7 @@
 
 /* Stylish card header */
 .card-header {
-  background: linear-gradient(45deg, #57d900, #a8ff35);
+  background: linear-gradient(45deg, yellowgreen,yellowgreen);
   color: white;
   text-align: center;
   font-size: 1.5rem;
@@ -36,13 +36,13 @@
 }
 
 .card-header:hover {
-  background: linear-gradient(45deg, #a8ff35, #57d900);
+  background: linear-gradient(45deg, yellowgreen,yellowgreen);
 }
 .link{
     color: #333;
 }
 .link:hover{
-    color: #57d900;
+    color: #006989;
 }
 
 /* Optional card content */
@@ -79,7 +79,7 @@
 
 /* On focus, change border and add shadow */
 .form-control:focus {
-  border-color: #57d900;
+  border-color: #32012F;
   box-shadow: 0 0 8px rgba(87, 217, 0, 0.2);
   outline: none;
 }
@@ -96,7 +96,7 @@
 
 /* Submit button */
 .btn-submit {
-  background-color: #57d900;
+  background-color: yellowgreen;
   color: white;
   padding: 10px 20px;
   border: none;
