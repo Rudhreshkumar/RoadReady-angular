@@ -1,0 +1,10 @@
+<div class="alert alert-dark" role="alert" *ngIf="successMsg">
+    {{successMsg}}
+ </div>
+ <div class="alert alert-primary" role="alert" *ngIf="errorMsg">
+   {{errorMsg}}
+ </div>
+<input type="text" class="form-control" [(ngModel)]="modelname" placeholder="Model name" aria-label="Model name" aria-describedby="basic-addon2">
+<div class="input-group-append">
+    <button (click)="onClick()" class="btn btn-outline-secondary" type="button" style="background-color: yellowgreen;">Button</button>
+</div>

@@ -1,0 +1,75 @@
+<!-- onboard.component.html -->
+<app-titlenavabar></app-titlenavabar>
+<br>
+<div class="container-fluid">
+    <div class="row justify-content-center" style="min-height: calc(100vh - 56px);">
+        <div class="col-lg-7 d-flex justify-content-center align-items-center">
+            <div class="card w-100">
+                <div class="card-body">
+                    <div class="card flex justify-content-center">
+                        <p-stepper>
+                            <p-stepperPanel header="Brand">
+                                <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+                                    <div class="flex flex-column h-12rem">
+                                        <div class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+                                            <app-brand (brandAdded)="onBrandAdded($event)"></app-brand>
+                                        </div>
+                                    </div>
+                                    <div class="flex pt-4 justify-content-end">
+                                        <p-button 
+                                            label="Next" 
+                                            icon="pi pi-arrow-right" 
+                                            iconPos="right" 
+                                            (onClick)="nextCallback.emit()" />
+                                    </div>
+                                </ng-template>
+                            </p-stepperPanel>
+                            <p-stepperPanel header="Model">
+                                <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
+                                    <div class="flex flex-column h-12rem">
+                                        <div class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+                                            <app-model [brandId]="brandId" (modelAdded)="onModelAdded($event)"></app-model>
+                                        </div>
+                                    </div>
+                                    <div class="flex pt-4 justify-content-between">
+                                        <p-button 
+                                            label="Back" 
+                                            icon="pi pi-arrow-left" 
+                                            (onClick)="prevCallback.emit()" />
+                                        <p-button 
+                                            label="Next" 
+                                            icon="pi pi-arrow-right" 
+                                            iconPos="right" 
+                                            (onClick)="nextCallback.emit()" />
+                                    </div>
+                                </ng-template>
+                            </p-stepperPanel>
+                            <p-stepperPanel header="Car Details">
+                                <ng-template pTemplate="content" let-prevCallback="prevCallback" let-index="index">
+                                    <div class="flex flex-column h-12rem">
+                                        <div class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+                                            <app-usedcardetails [modelId]="modelId"></app-usedcardetails> <!-- Pass modelId -->
+                                        </div>
+                                    </div>
+                                    <div class="flex pt-4 justify-content-between">
+                                        <p-button 
+                                            label="Back" 
+                                            icon="pi pi-arrow-left" 
+                                            (onClick)="prevCallback.emit()" />
+                                        <p-button href="/seller/dashboard"
+                                            label="What's Next?" 
+                                            icon="pi pi-question-circle" 
+                                            class="p-button-help" />
+                                    </div>
+                                    
+                                    
+                                </ng-template>
+                            </p-stepperPanel>
+                        </p-stepper>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

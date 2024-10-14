@@ -8,14 +8,14 @@ import {  RouterLink } from '@angular/router';
 @Component({
   selector: 'app-rentalcars',
   standalone: true,
-  imports: [NgFor,CustomerNavbarComponent,CustomersidebarComponent],
+  imports: [NgFor],
   templateUrl: './rentalcars.component.html',
   styleUrl: './rentalcars.component.css',
 })
 export class RentalcarsComponent {
   rentalCars: any[] = [];
   storedCars: any[] = [];
-  navi: any;
+  
 
   constructor(private userService: UserService) {
     userService.getRentalCars().subscribe({

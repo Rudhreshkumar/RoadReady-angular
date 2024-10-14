@@ -1,0 +1,13 @@
+.p-stepper {
+    flex-basis: 50rem;
+} 
+.centered-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Vertically center */
+  }
+  
+  .card-body {
+    background-color: yellowgreen; /* Set background color to green */
+  }

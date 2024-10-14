@@ -1,1 +1,90 @@
-<p style="color: aliceblue;">booking</p>
+<div class="container-fluid">
+    <div class="row">
+         
+        <div class="col-lg-7">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card flex justify-content-center">
+                        <p-stepper>
+                            <p-stepperPanel header=" Rental Details">
+                                <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+                                    <div class="">
+                                        <div class="">
+                                            <!-- <app-personal-info></app-personal-info> -->
+                                             <!-- rental info -->
+                                              <app-rental-info></app-rental-info>
+                                        </div>
+                                    </div>
+                                    <div class="flex pt-4 justify-content-end">
+                                        <p-button 
+                                            label="Next" 
+                                            icon="pi pi-arrow-right" 
+                                            iconPos="right" 
+                                            (onClick)="nextCallback.emit()" />
+                                    </div>
+                                </ng-template>
+                            </p-stepperPanel>
+                            <p-stepperPanel header=" Safe Keeping info">
+                                <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
+                                    <div class="flex flex-column h-12rem">
+                                        <div class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+                                          
+                                          
+                                              <app-safekeeping-info></app-safekeeping-info>
+                                        </div>
+                                    </div>
+                                    <div class="flex pt-4 justify-content-between">
+                                        <p-button 
+                                            label="Back" 
+                                            icon="pi pi-arrow-left" 
+                                            (onClick)="prevCallback.emit()" />
+                                        <p-button 
+                                            label="Next" 
+                                            icon="pi pi-arrow-right" 
+                                            iconPos="right" 
+                                            (onClick)="nextCallback.emit()" />
+                                    </div>
+                                </ng-template>
+                            </p-stepperPanel>
+                          
+
+
+                            <p-stepperPanel header=" terms and conditions">
+                                <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
+                                    <div class="flex flex-column h-12rem">
+                                        <div class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+                                            <!-- <app-medical-info></app-medical-info> -->
+                                             <!-- safe keeping info -->
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam accusamus minima impedit. Voluptatibus praesentium maiores deserunt vitae hic esse veniam fugiat quo, consequuntur suscipit unde molestias cupiditate consequatur excepturi deleniti exercitationem, sed perspiciatis necessitatibus, nesciunt maxime impedit. Facilis dicta nesciunt et reiciendis neque, molestias maiores pariatur iste cumque sapiente quis quisquam officia. Distinctio odit, fuga quam asperiores quaerat ipsum eaque alias ipsa perspiciatis laudantium ad consectetur repellendus voluptatem voluptates placeat sed laboriosam impedit ducimus! Molestias totam animi qui ipsa ducimus, asperiores, eos earum numquam officiis tenetur beatae nostrum perspiciatis officia et nam nisi assumenda esse. Excepturi, pariatur dolores. Ab suscipit cum perferendis quam ullam, aperiam nam odio delectus consequuntur velit facere natus sit dolorum laboriosam corrupti officia? Ea repellat magni dolor ad laborum consectetur voluptatem numquam vero voluptatibus repudiandae? Reiciendis quae necessitatibus atque aut. Deleniti earum, velit corporis molestias eius accusamus sapiente! Ullam ad quos accusantium omnis eius ipsa adipisci soluta excepturi quaerat. Tempora, vitae laudantium iusto nostrum debitis, porro ullam neque rem, sequi odit fugiat vero ipsam earum voluptates est nisi eos a commodi ratione aperiam corporis nulla nobis totam similique! Rem, corrupti? Neque ipsam dignissimos perferendis facilis non corporis nihil autem exercitationem voluptas dolorem, maiores suscipit recusandae officiis quaerat ea assumenda, maxime mollitia hic aspernatur earum! Nostrum veritatis maiores voluptate tempore reprehenderit, dolorem molestiae a ad suscipit earum. Perspiciatis adipisci velit unde placeat natus deserunt soluta error, temporibus nesciunt et reiciendis nam numquam id modi reprehenderit aut quis aspernatur quaerat voluptatem exercitationem doloremque. Suscipit laudantium rerum fugit deserunt voluptatibus commodi minima eaque sint, praesentium provident dolor at laborum facilis possimus consectetur dicta explicabo sapiente incidunt perferendis, illum totam libero voluptas sequi doloribus! Atque quo architecto ad? Labore illo fuga neque non quis impedit, veniam, sint eos, cumque eveniet expedita officiis? Dolorem tenetur dolorum error blanditiis est dolores ipsum soluta, rerum at temporibus nam omnis, deserunt corporis commodi pariatur perferendis neque similique! Voluptatum quos provident ducimus quo ipsa odio, totam minima dolorem vero quibusdam tempore non eius reprehenderit delectus, corrupti animi fugiat, doloremque quidem. Cupiditate, assumenda! Id quod illo ad repellendus nemo pariatur, assumenda natus modi inventore obcaecati architecto incidunt earum perferendis. Repellat inventore, esse blanditiis nihil perferendis magni quasi odit voluptates nam? Ipsam adipisci facilis ullam. Obcaecati laboriosam similique qui ex odit error reprehenderit, dolor ab at dolores molestias animi quam nam minima repellat quas! Unde illum nihil animi provident perspiciatis veritatis amet modi laborum inventore facere, nam delectus. Delectus cupiditate quia saepe at ea veritatis amet recusandae officia repellat ratione inventore quod, illo provident quas sint deserunt quos debitis praesentium corporis ipsum adipisci? Quod, deleniti nam. Quaerat adipisci laudantium maiores tempore debitis in enim repellendus earum non quo velit, provident qui ut dicta nemo doloremque molestiae delectus corporis aliquam odit recusandae, sapiente placeat, reiciendis minus. Repellat eum reprehenderit tenetur! Eligendi porro repellat libero labore quam dolores excepturi nulla harum enim facilis maiores nam repudiandae consequuntur quidem blanditiis pariatur deserunt error deleniti, sunt dignissimos repellendus omnis fugiat, asperiores minus? Asperiores labore laboriosam error in doloremque quo doloribus neque.                                        </div>
+                                    </div>
+                                    <div class="flex pt-4 justify-content-between">
+                                        <p-button 
+                                            label="Back" 
+                                            icon="pi pi-arrow-left" 
+                                            (onClick)="prevCallback.emit()" />
+                                   
+                                    </div>
+                                </ng-template>
+                            </p-stepperPanel>
+                          
+
+
+
+
+                        </p-stepper>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="card">
+                   <div class="card-header">Rental Summary</div> 
+                    <div class="card-body">
+                        <!-- <app-summary></app-summary> -->
+                         <!-- summary -->
+                          <app-rental-summary></app-rental-summary>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

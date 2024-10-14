@@ -1,0 +1,29 @@
+<app-titlenavabar></app-titlenavabar>
+<div class="container">
+    <div class="card-wrapper">
+        <!-- Price Estimate Card -->
+        <div class="card price-card">
+            <img src="car2.jpg" alt="Car Image" class="car-image">
+            <div class="price-info">
+                <h2>PRICE ESTIMATE</h2>
+                <p class="price">₹10,51,177 </p>
+                <p class="note">You may get a better price upon inspection</p>
+            </div>
+        </div>
+
+        <!-- What's Next Card -->
+        <div class="card next-step-card">
+            <img src="inspect.png" alt="Small Car Image" class="small-car-image">
+            <div class="text-content">
+                <h2>Changed your mind?</h2>
+                <p>Book an inspection to sell your car.</p>
+            </div>
+            <button (click)="onclickbook()"class="book-inspection-btn">BOOK INSPECTION</button>
+            <div class="text-content">
+                <p>Want to sell another car?</p>
+            </div>
+            <button (click)="onClick()" class="get-car-price-btn" >GET CAR PRICE</button>
+        </div>
+        
+    </div>
+</div>

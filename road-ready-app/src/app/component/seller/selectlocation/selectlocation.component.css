@@ -1,0 +1,135 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0;
+}
+
+.fullscreen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 100vw; 
+}
+
+.location-card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    width: 40vw; 
+    max-width: 600px;
+    height: auto;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-header p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.location-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.option {
+    cursor: pointer;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    transition: background-color 0.3s ease;
+}
+
+.option input {
+    display: none;
+}
+
+.option:hover {
+    background-color: #ddd;
+}
+
+.address-box {
+    display: none;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.address-box label {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+} */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 20px;
+  }
+  
+  .card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .icon-group {
+    margin-bottom: 20px;
+  }
+  
+  .icon-group a {
+    margin: 10px;
+  }
+  
+  .address-box {
+    margin-bottom: 20px;
+  }
+  
+  .row {
+    margin-top: 20px;
+  }
+  .sidebar-fixed {
+    position: fixed; /* Fix the sidebar in place */
+    top: 0; /* Stick to the top */
+    left: 0; /* Stick to the left */
+    width: 250px; /* Fixed width for the sidebar */
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Enable scrolling if content exceeds sidebar height */
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+  
+  .container-fluid {
+    margin-left: 250px; /* Push the main content to the right */
+  }
+  

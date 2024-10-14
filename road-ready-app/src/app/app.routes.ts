@@ -19,9 +19,17 @@ import { SignupComponent } from './component/customer/usedcars/signup/signup.com
 import { MyactivityComponent } from './component/customer/myactivity/myactivity.component';
 import { ProfileComponent } from './component/customer/profile/profile.component';
 
-
+import { UsedcarComponent } from './component/seller/usedcar/usedcar.component';
+import { OnboardComponent } from './component/usedcaradd/onboard/onboard.component';
+import { ModelComponent } from './component/usedcaradd/model/model.component';
+import { BookinspectionComponent } from './component/seller/bookinspection/bookinspection.component';
+import { SelectlocationComponent } from './component/seller/selectlocation/selectlocation.component';
+import { CheckingpriceComponent } from './component/seller/checkingprice/checkingprice.component';
+import { UsedcardetailsComponent } from './component/usedcaradd/usedcardetails/usedcardetails.component';
+import { MembershipComponent } from './component/seller/membership/membership.component';
 
 export const routes: Routes = [
+
     {
         "path":"",component:LandingPageComponent
     },
@@ -37,6 +45,27 @@ export const routes: Routes = [
     {
         "path":"seller/dashboard",component:SellerdashboardComponent
     },
+    {
+        "path":"usedcar/add",component:OnboardComponent
+    },
+   // {
+      //  "path": 'model/:modelId', component: ModelComponent
+  //  },
+    {
+        "path":'bookinspectionpage',component:BookinspectionComponent
+    },
+    {
+        "path":"selectlocation",component:SelectlocationComponent
+    },
+    {
+        "path":"addmembership",component:MembershipComponent
+    },
+    {
+        "path":"checkprice",component:CheckingpriceComponent
+    },
+   /* {
+        "path":"usedcaradd/:modelId",component:UsedcardetailsComponent
+    },*/
     {
         "path":"customer/dashboard",component:CustomerdashboardComponent
     },
@@ -59,15 +88,6 @@ export const routes: Routes = [
         "path":"customer/profile-settings",component:ProfileSettingsComponent
     },
     {
-        "path":"customer/rentalcars",component:RentalcarsComponent
-    },
-    {
-        "path":"customer/rentalcars/single-rental-car",component:SingleRentalCarComponent
-    },
-    {
-        "path":"customer/rentalcars/booking",component:BookingComponent
-    },
-    {
         "path":"customer/usedcars",component:UsedcarsComponent
     },
     {
@@ -78,5 +98,49 @@ export const routes: Routes = [
     },
     {
         "path":"usedcars/purchase/:id",component:PurchaseComponent
-    }
+    },
+
+  {
+    path: 'customer/dashboard',
+    component: CustomerdashboardComponent,
+    children: [
+      {
+        path: 'rentalcars',
+        component: RentalcarsComponent,
+        pathMatch:'full'
+      },
+      {
+        path:"single-car/:scid", component:SingleRentalCarComponent
+      }
+    ],
+  },
+  {
+    path: 'customer/wishlisted-cars',
+    component: WishlistedCarsComponent,
+  },
+  {
+    path: 'customer/my-purchase',
+    component: MyPurchaseComponent,
+  },
+  {
+    path: 'customer/rental-history',
+    component: RentalHistoryComponent,
+  },
+  {
+    path: 'customer/profile-settings',
+    component: ProfileSettingsComponent,
+  },
+//   {
+//     path: 'customer/rentalcars',
+//     component: RentalcarsComponent,
+//   },
+  {
+    path: 'customer/rentalcars/single-rental-car',
+    component: SingleRentalCarComponent,
+  },
+  {
+    path: 'customer/rentalcars/booking',
+    component: BookingComponent,
+  },
+
 ];

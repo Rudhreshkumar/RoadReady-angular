@@ -41,8 +41,6 @@ getRentalCars() : Observable<any>{
   return this.http.get<any>('http://localhost:8083/executive/rentalcars/all')
 }
 
-
-
   setUsername(username: string) {
     this.username = username;
   }
@@ -50,5 +48,4 @@ getRentalCars() : Observable<any>{
   getUsername() {
     return this.username || localStorage.getItem('username');
   }
-
 }

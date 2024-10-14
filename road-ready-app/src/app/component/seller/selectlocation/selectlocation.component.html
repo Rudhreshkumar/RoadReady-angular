@@ -1,0 +1,152 @@
+<!--<div class="fullscreen-container">
+    <div class="location-card">
+        <div class="card-header">
+            <h2>CONFIRM CAR LOCATION</h2>
+            <p>Our care expert will come here for verification and pick up</p>
+        </div>
+
+        <div class="location-options">
+            <label class="option">
+                <input type="radio" name="location" onclick="showAddressBox('home')">
+                HOME
+            </label>
+            <label class="option">
+                <input type="radio" name="location" onclick="showAddressBox('work')">
+                WORK
+            </label>
+            <label class="option">
+                <input type="radio" name="location" onclick="showAddressBox('other')">
+                OTHER
+            </label>
+        </div>
+
+        <div class="address-box" id="home-address">
+            <label for="home-address-text">Enter Home Address:</label>
+            <textarea id="home-address-text" rows="3" placeholder="Type your home address here"></textarea>
+        </div>
+
+        <div class="address-box" id="work-address">
+            <label for="work-address-text">Enter Work Address:</label>
+            <textarea id="work-address-text" rows="3" placeholder="Type your work address here"></textarea>
+        </div>
+
+        <div class="address-box" id="other-address">
+            <label for="other-address-text">Enter Other Address:</label>
+            <textarea id="other-address-text" rows="3" placeholder="Type your other address here"></textarea>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to display the appropriate address box
+    function showAddressBox(location) {
+        // Hide all address boxes first
+        document.getElementById('home-address').style.display = 'none';
+        document.getElementById('work-address').style.display = 'none';
+        document.getElementById('other-address').style.display = 'none';
+
+        // Show the selected address box
+        if (location === 'home') {
+            document.getElementById('home-address').style.display = 'block';
+        } else if (location === 'work') {
+            document.getElementById('work-address').style.display = 'block';
+        } else if (location === 'other') {
+            document.getElementById('other-address').style.display = 'block';
+        }
+    }
+</script>-->
+<!-- <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Select an option</h5>
+      <div class="icon-group">
+        <a (click)="toggleAddressBox('home')">
+          <i class="fas fa-home"></i>
+        </a>
+        <a  (click)="toggleAddressBox('work')">
+          <i class="fas fa-briefcase"></i>
+        </a>
+        <a  (click)="toggleAddressBox('other')">
+          <i class="fas fa-ellipsis-h"></i>
+        </a>
+      </div>
+      <div class="address-box" *ngIf="showHomeAddress">
+        <input type="text" class="form-control" placeholder="Enter home address">
+      </div>
+      <div class="address-box" *ngIf="showWorkAddress">
+        <input type="text" class="form-control" placeholder="Enter work address">
+      </div>
+      <div class="address-box" *ngIf="showOtherAddress">
+        <input type="text" class="form-control" placeholder="Enter other address">
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-lg-5 mb-3 mb-sm-0">
+          <div class="time-picker" data-coreui-locale="en-US" data-coreui-toggle="time-picker" id="timePicker1"></div>
+        </div>
+        <div class="col-sm-6 col-lg-5 mb-3 mb-sm-0">
+          <div data-coreui-locale="en-US" data-coreui-toggle="date-picker"></div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3 col-xl-2 px-sm-2 px-0 bg-dark text-white sidebar-fixed">
+        <app-sellersidebar></app-sellersidebar>
+      </div>
+  
+      <!-- Main content next to sidebar -->
+      <div class="col-md-9 col-xl-10 d-flex justify-content-center align-items-center" style="min-height: 100vh; padding-top: 50px;">
+        <div class="card" style="width: 100%; max-width: 500px; margin: auto;">
+          <div class="card-body">
+            <h5 class="card-title text-center">Choose a Location</h5>
+            <p class="card-text text-center" style="font-size: 14px;">Our expert will come and inspect your car</p>
+            <h6 class="text-center" style="margin-bottom: 20px;">Where shall we inspect your car?</h6>
+            <div class="icon-group text-center">
+              <a (click)="toggleAddressBox('home')">
+                <i class="fas fa-home fa-2x text-primary"></i>
+              </a>
+              <a (click)="toggleAddressBox('work')">
+                <i class="fas fa-briefcase fa-2x text-success"></i>
+              </a>
+              <a (click)="toggleAddressBox('other')">
+                <i class="fas fa-ellipsis-h fa-2x text-info"></i>
+              </a>
+            </div>
+            <hr />
+            <div class="address-box" *ngIf="showHomeAddress">
+              <h6>Home Address</h6>
+              <input type="text" class="form-control" placeholder="Enter home address">
+            </div>
+            <div class="address-box" *ngIf="showWorkAddress">
+              <h6>Work Address</h6>
+              <input type="text" class="form-control" placeholder="Enter work address">
+            </div>
+            <div class="address-box" *ngIf="showOtherAddress">
+              <h6>Other Address</h6>
+              <input type="text" class="form-control" placeholder="Enter other address">
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-6 col-lg-5 mb-3 mb-sm-0">
+                <input type="date" id="date-picker" name="date-picker" class="form-control">
+              </div>
+              <div class="col-sm-6 col-lg-5 mb-3 mb-sm-0">
+                <input type="time" class="form-control" placeholder="Enter time">
+              </div>
+              <div class="text-center mt-3"> 
+                <button class="btn btn-primary btn-block" (click)="showDialog()">Book Inspection</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-dialog header="Inspection Booked!" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+    <span class="p-text-secondary block mb-5">Check profile to know about verification.</span>
+    <div class="flex justify-content-end gap-2">
+        <p-button label="Close" (onClick)="visible = false" />
+    </div>
+</p-dialog>
+  

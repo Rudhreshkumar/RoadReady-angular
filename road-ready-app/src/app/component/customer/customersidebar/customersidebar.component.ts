@@ -6,14 +6,14 @@ import { Router, RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './customersidebar.component.html',
-  styleUrl: './customersidebar.component.css'
+  styleUrl: './customersidebar.component.css',
 })
 export class CustomersidebarComponent {
-
   username: any;
 
-  constructor(private router: Router){
-     this.username= localStorage.getItem('username')
+  constructor(private router: Router) {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      this.username = window.localStorage.getItem('username');
+    }
   }
-
 }

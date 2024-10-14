@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <app-sellersidebar></app-sellersidebar>
+        </div>
+
+        
+        <div class="col py-3 content-area">
+          <div class="row">
+            
+            <div class="col-md-6 section top-left">
+                <div class="alert alert-dark" role="alert" *ngIf="successMsg">
+                    {{successMsg}}
+                 </div>
+                 <div class="alert alert-primary" role="alert" *ngIf="errorMsg">
+                   {{errorMsg}}
+                 </div>
+                <input type="text" class="form-control" [(ngModel)]="brandname" placeholder="Brand name" aria-label="Brand name" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button (click)="onClick()" class="btn btn-outline-secondary" type="button">Button</button>
+                </div>
+            </div>
+
+         
+            <div class="col-md-6 section top-right">
+                <div class="col-md-6 section top-left">
+                    <div class="alert alert-dark" role="alert" *ngIf="successMsg">
+                        {{successMsg}}
+                     </div>
+                     <div class="alert alert-primary" role="alert" *ngIf="errorMsg">
+                       {{errorMsg}}
+                     </div>
+                    <input type="text" class="form-control" [(ngModel)]="modelname" placeholder="Model name" aria-label="Model name" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                     <!--   <button (click)="onClickModel()" class="btn btn-outline-secondary" type="button">Button</button>-->
+                    </div>
+                </div>
+          </div>
+
+          
+          <div class="row">
+            <div class="col-12 section bottom">
+             
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
