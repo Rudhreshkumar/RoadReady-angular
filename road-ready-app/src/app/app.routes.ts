@@ -32,6 +32,7 @@ import { SellersignupComponent } from './component/seller/sellersignup/sellersig
 
 import { EditprofileComponent } from './component/seller/profile/editprofile/editprofile.component';
 import { FinalpriceComponent } from './component/seller/finalprice/finalprice.component';
+import { ContactComponent } from './component/landing-page/contact/contact.component';
 
 export const routes: Routes = [
 
@@ -118,6 +119,8 @@ export const routes: Routes = [
     },
     {
         "path":"usedcars/purchase/:id",component:PurchaseComponent
+    },{
+        "path":"contact",component:ContactComponent
     },
 
   {

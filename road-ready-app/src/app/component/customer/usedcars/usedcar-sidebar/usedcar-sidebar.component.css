@@ -1,0 +1,11 @@
+    .fixed-sidebar {
+        position: fixed; /* Make the sidebar fixed */
+        height: 100%; /* Full height */
+        width: 250px; /* Adjust as necessary */
+        left: 0; /* Align to the left */
+    }
+    /* Optional styles to manage body padding */
+    body {
+        margin: 0; /* Ensure no default margin */
+        overflow-x: hidden; /* Hide horizontal overflow */
+    }
