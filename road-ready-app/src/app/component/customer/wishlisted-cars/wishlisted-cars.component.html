@@ -26,7 +26,7 @@
                   <div class="card-body">
                     <h5 class="card-title">{{ uc.usedCar.model.brand.brandname }} {{ uc.usedCar.model.modelname }} ({{ uc.usedCar.year }})</h5>
                     <p class="card-text">{{ uc.usedCar.fuelType }} {{ uc.usedCar.transmissionType }}</p>
-                    <p class="card-text"> Rs {{ uc.usedCar.price }}</p>
+                    <p class="card-text"> Rs {{ uc.usedCar.finalprice }}</p>
                     <p class="card-text"> {{ uc.usedCar.status }}</p>
                     <a href="/usedcars/view-more-details/{{ uc.usedCar.id }}" class="card-link">Check Now</a>
                   </div>

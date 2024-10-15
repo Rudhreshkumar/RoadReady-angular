@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SellerService } from '../../../service/seller.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgClass, NgIf, NgStyle } from '@angular/common';
 import { SellersidebarComponent } from "../sellersidebar/sellersidebar.component";
 
@@ -19,7 +19,7 @@ export class FinalpriceComponent implements OnInit {
   errorMessage: string;
   isModalOpen: boolean = false;
   isSellCarDisabled: boolean = false;
-  constructor(private route: ActivatedRoute, private sellerService: SellerService) {}
+  constructor(private route: ActivatedRoute, private sellerService: SellerService,private router:Router) {}
 
   ngOnInit(): void {
     this.carId = +this.route.snapshot.paramMap.get('id');
@@ -59,6 +59,7 @@ export class FinalpriceComponent implements OnInit {
   closeSellCarModal(): void {
     this.isModalOpen = false;
     this.isSellCarDisabled = true;
+    this.router.navigate(['/seller/dashboard']);
   }
 
   confirmSellCar(): void {

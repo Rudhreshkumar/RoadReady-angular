@@ -54,7 +54,7 @@
         <div class="right-column col-md-6">
             <div class="invoice-details bg-light-green text-dark p-3 rounded">
                 <h2>Invoice</h2>
-                <div class="invoice-item"><strong>Car Price:</strong> ₹{{ usedCar?.price }}</div>
+                <div class="invoice-item"><strong>Car Price:</strong> ₹{{ usedCar?.finalprice }}</div>
                 <div class="invoice-item"><strong>Taxes (5%):</strong> ₹{{ (usedCar?.price * 0.05) }}</div>
                 <div class="invoice-item"><strong>Processing Fee:</strong> ₹{{ documentationFee }}</div>
                 <div class="invoice-item"><strong>Total:</strong> ₹{{ totalAmount }}</div>

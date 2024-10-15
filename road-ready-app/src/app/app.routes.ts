@@ -33,6 +33,7 @@ import { SellersignupComponent } from './component/seller/sellersignup/sellersig
 import { EditprofileComponent } from './component/seller/profile/editprofile/editprofile.component';
 import { FinalpriceComponent } from './component/seller/finalprice/finalprice.component';
 import { ContactComponent } from './component/landing-page/contact/contact.component';
+import { SellerProfileComponent } from './component/seller/profile/sellerprofile.component';
 
 export const routes: Routes = [
 
@@ -52,7 +53,7 @@ export const routes: Routes = [
       "path":"seller/signup",component:SellersignupComponent
     },
     {
-      "path":"seller/profile",component:ProfileComponent
+      "path":"seller/profile",component:SellerProfileComponent
     },
     {
       "path":"edit/seller/profile",component:EditprofileComponent

@@ -13,15 +13,15 @@
               <div class="details">
                 <p><strong>Final Price:</strong> {{ finalPrice }}</p>
                 <p><strong>Membership Type:</strong> {{ membershipType }}</p>
+                <p>Your car has been <span style="color: gold; font-weight: bold;">verified</span> by our expert. The final price has been calculated based on your car's condition and your membership tier. Click on "Sell Car" to proceed and find a buyer.</p>
               </div>
               <button class="btn btn-primary" (click)="openSellCarModal()">Sell Car</button>
-
+    
               <div class="error-message" *ngIf="errorMessage">
                 <p>{{ errorMessage }}</p>
               </div>
             </div>
           </div>
-
           <div class="col-md-6 mb-4">
             <div class="calculation-overview-container p-4 shadow-sm bg-light rounded">
               <h2 class="title">How Final Price is Calculated</h2>

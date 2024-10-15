@@ -115,7 +115,7 @@
             <div class="card-body" style="padding: 5px;"> <!-- Reduced Padding -->
               <h3 class="card-title" style="margin-bottom: 5px;">{{ usedcar.brand }} {{ usedcar.model }}</h3> <!-- Reduced Margin -->
               <p class="card-text" style="margin-bottom: 3px;">{{ usedcar.mileage }} km &nbsp;&nbsp;{{usedcar.fuelType}}&nbsp;&nbsp;{{usedcar.transmissionType}} </p> <!-- Reduced Margin -->
-              <p class="card-text" style="margin-bottom: 3px;">₹{{ usedcar.price }}</p> <!-- Reduced Margin -->
+              <p class="card-text" style="margin-bottom: 3px;">₹{{ usedcar.finalprice }}</p> <!-- Reduced Margin -->
              
               <a [routerLink]="['/usedcars/view-more-details',usedcar.id]" class="btn btn-dark" style="border-color: antiquewhite; color: greenyellow; font-size: 0.85rem;">
                 View More Details

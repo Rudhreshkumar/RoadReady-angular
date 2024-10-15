@@ -41,6 +41,7 @@ getAllCars() {
     next: (data) => {
       this.filteredUsedCars = data;
       this.assignImagesToCars();
+      console.log(data);
     },
     error: (err) => {
       console.error(err);

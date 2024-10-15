@@ -16,5 +16,5 @@ export class UsedCar{
   fuelType?: string;
   status?:string;
   imagePath?: string;
-  
+  finalprice?:number;
 }

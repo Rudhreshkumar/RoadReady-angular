@@ -15,5 +15,6 @@ export interface UsedCarDto {
     transmissionType: string;
     fuelType: string;
     status: string;
+    finalprice: number;
   }
   

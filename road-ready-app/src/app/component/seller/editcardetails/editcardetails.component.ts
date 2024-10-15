@@ -99,6 +99,6 @@ export class EditcardetailsComponent implements OnInit {
   }
 
   onShowClick() {
-    this.router.navigateByUrl("/sellerdashboard"); 
+    this.router.navigateByUrl("/seller/dashboard"); 
   }
 }

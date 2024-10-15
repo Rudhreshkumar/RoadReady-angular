@@ -30,3 +30,24 @@
   .row.flex-nowrap {
     overflow-x: auto;
   }
+  .status-label {
+    font-weight: 600; /* or 500 for a lighter look */
+    padding: 0.2rem 0.4rem; /* Add some padding for better spacing */
+    border-radius: 0.25rem; /* Optional: add rounded corners */
+    display: inline-block; /* Ensures proper padding and background */
+}
+.table th {
+  background-color: #f8f9fa; /* Light background for the header */
+  color: #333; /* Darker text for contrast */
+  font-weight: bold; /* Ensure header text stands out */
+}
+
+.table td {
+  font-weight: 500; /* Regular weight for table data */
+}
+
+.status-label {
+  padding: 0.2rem 0.4rem; /* Padding for status labels */
+  border-radius: 0.25rem; /* Rounded corners */
+  display: inline-block; /* Keeps the padding consistent */
+}

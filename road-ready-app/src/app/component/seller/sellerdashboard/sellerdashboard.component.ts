@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { SellersidebarComponent } from "../sellersidebar/sellersidebar.component";
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { SellerService } from '../../../service/seller.service';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-sellerdashboard',
   standalone: true, 
-  imports: [NgFor, RouterLink, SellersidebarComponent,NgClass,NgFor,NgIf], 
+  imports: [NgFor, RouterLink, SellersidebarComponent,NgClass,NgFor,NgIf,NgStyle], 
   templateUrl: './sellerdashboard.component.html',
   styleUrls: ['./sellerdashboard.component.css']
 })
@@ -91,6 +91,26 @@ export class SellerdashboardComponent implements OnInit {
       }
     });
   }
+  // bookInspection(carId: number) {
+  //   this.isBookingDisabled = true;
+  
+  //   this.sellerService.getBookingByCarId(carId).subscribe({
+  //     next: (booking) => {
+  //       if (booking) {
+  //         this.showCheckPriceButton = true;
+  //         this.isBookingDisabled = true;
+  //       } else {
+  //         this.isBookingDisabled = false;
+  //         this.router.navigate(['/selectlocation', carId]);
+  //       }
+  //     },
+  //     error: (error) => {
+  //       console.error('Error checking booking status:', error); // 400 Bad Request error here
+  //       this.isBookingDisabled = false;
+  //     }
+  //   });
+  // }
+  
 
   
 
