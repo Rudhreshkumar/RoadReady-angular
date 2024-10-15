@@ -118,5 +118,9 @@ export class ProfileSettingsComponent implements OnInit{
       this.imageMsg = 'Please provide customer ID before uploading PAN Card.';
     }
   }
+
+  onCancel() {
+    this.router.navigateByUrl("/customer/profile"); 
+  }
 }
 

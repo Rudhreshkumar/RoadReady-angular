@@ -4,6 +4,7 @@ import { CustomerService } from '../../../../service/customer.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Customer } from '../../../../../model/customer.model';
 import { NgFor, NgIf } from '@angular/common';
+import { EmailService } from '../../../../service/email.service';
 
 @Component({
   selector: 'app-signup',
@@ -34,18 +35,43 @@ export class SignupComponent {
   customerId:number 
  
 
-  constructor(private customerService:CustomerService,private router:Router){}
+  constructor(private customerService:CustomerService,private router:Router,private emailService:EmailService){}
+
+  // onSignUp(form: NgForm) {
+  //   if (form.valid) {
+  //     const observer = {
+  //       next: (data: any) => {
+  //         this.customer = data;
+  //         this.customerId = Number(this.customer.id); 
+  //         this.show = true;
+  //         this.showFileUpload = true;
+  //         console.log('Customer registered successfully:', this.customer);
+  //         this.router.navigate(['/login']);
+  //       },
+  //       error: (err: any) => {
+  //         console.error('Error adding customer:', err);
+  //       },
+  //       complete: () => {
+  //         console.log('Signup process completed');
+  //       }
+  //     };
+  //     this.customerService.addCustomer(this.customer).subscribe(observer);
+  //   } else {
+  //     console.error('Form is not valid');
+  //   }
+  // }
 
   onSignUp(form: NgForm) {
     if (form.valid) {
       const observer = {
         next: (data: any) => {
           this.customer = data;
-          this.customerId = Number(this.customer.id); 
           this.show = true;
           this.showFileUpload = true;
           console.log('Customer registered successfully:', this.customer);
-          this.router.navigate(['/login']);
+
+          // Call to send the verification email after successful signup
+          this.sendVerificationEmail();
         },
         error: (err: any) => {
           console.error('Error adding customer:', err);
@@ -59,5 +85,19 @@ export class SignupComponent {
       console.error('Form is not valid');
     }
   }
+
+  sendVerificationEmail() {
+    this.emailService.sendEmail().subscribe({
+      next: (response) => {
+        console.log('Verification email sent:', response);
+        // Navigate to the login page after sending the email
+        this.router.navigate(['/login']);
+      },
+      error: (err) => {
+        console.error('Error sending verification email:', err);
+      }
+    });
+  }
+
  
 }
