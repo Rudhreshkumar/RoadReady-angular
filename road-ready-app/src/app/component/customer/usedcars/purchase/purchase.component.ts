@@ -21,7 +21,7 @@ export class PurchaseComponent implements OnInit {
   username: string;
 
   quantity: number = 1;
-  inspectionCharges: number = 1500;
+  inspectionCharges: number = 5000;
   documentationFee: number = 5000;
   serviceCharge: number = 30000;
   warrantyOption: number = 5000;
@@ -74,7 +74,6 @@ export class PurchaseComponent implements OnInit {
     return (this.usedCar.price * this.quantity) +
       this.inspectionCharges +
       this.documentationFee +
-      this.serviceCharge +
       this.warrantyOption;
   }
 

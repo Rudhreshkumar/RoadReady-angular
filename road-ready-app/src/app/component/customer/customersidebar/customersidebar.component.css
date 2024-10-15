@@ -1,5 +1,16 @@
-.container-fluid{
-    padding-right: 0%;
-    padding-left: 2%;
-   
+.html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure full height so there's no unwanted space */
+}
+
+.container-fluid, .row, .col-lg-12 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar{
+    padding: 0;
+    margin: 0;
 }

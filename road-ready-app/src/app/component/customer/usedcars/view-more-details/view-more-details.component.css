@@ -40,7 +40,7 @@ input.form-control {
 }
 
 input.form-control:hover {
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Add glow effect on hover */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); 
 }
 
 .btn {

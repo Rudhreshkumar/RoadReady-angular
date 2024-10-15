@@ -54,6 +54,25 @@
     margin: 0; 
     justify-content: center;
   } 
-  
-    
-  
+
+  .container-fluid {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+/* Card hover effect */
+.wishlist-card:hover {
+  background-color: #3E4343; /* Slightly darker background on hover */
+  transform: scale(1.02); /* Slight zoom effect */
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+/* Button hover effect */
+.btn-danger:hover {
+  background-color: #ff4d4d; /* Slightly lighter red on hover */
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  transform: scale(1.05); /* Slight zoom effect */
+}

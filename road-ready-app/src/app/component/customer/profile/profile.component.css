@@ -1,23 +1,64 @@
-.sidebar-fixed {
-    position: fixed;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 100;
-}
-
-.card {
-    background-color: #f8f9fa; 
-}
-
-.card-body {
-    padding: 2rem; 
-}
-
-.alert {
-    font-weight: bold;
-}
-
+/* General body styles */
 body {
-    background-color: #f0f0f0;
+    background-color: #f8f9fa; /* Light background for the whole page */
+}
+
+/* Sidebar styles */
+.sidebar-fixed {
+    position: fixed; /* Keep the sidebar fixed */
+    height: 100vh; /* Full height for the sidebar */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+/* Card styles */
+.card {
+    background-color: #ffffff; /* White background for card */
+    border: none; /* Remove default border */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+}
+
+/* Card body styles */
+.card-body {
+    padding: 30px; /* Add more padding for better spacing */
+}
+
+/* Title styles */
+.card-title {
+    font-size: 26px; /* Increase font size for title */
+    font-weight: bold; /* Keep bold text */
+    color: #007bff; /* Primary color for title */
+    text-align: center; /* Center title */
+}
+
+/* Paragraph styles */
+.card p {
+    color: #333; /* Darker text color for contrast */
+    font-size: 16px; /* Increase font size for readability */
+    margin: 10px 0; /* Add margin for spacing */
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #007bff; /* Primary button color */
+    border: none; /* Remove border */
+    border-radius: 25px; /* Rounded edges */
+    padding: 10px 20px; /* Add padding for button */
+    font-size: 16px; /* Increase button font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darken button on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Alert styles */
+.alert {
+    border-radius: 10px; /* Round edges for alert box */
+    font-weight: bold; /* Make alert text bold */
 }
